@@ -2,6 +2,7 @@
 ## 2024/2/29 - : Concentrate my firepower and the second battle begins
 # ============================
 ## "CLRS" (Cormen, Leiserson, Rivest, Stein)
+# [official website of this book](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 # reference:    
 https://github.com/walkccc/CLRS  
 https://walkccc.me/CLRS/   
