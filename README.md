@@ -1,6 +1,7 @@
 ## (failure: Don't even have the courage to fight !)2023/1/9 18:00 - 1/12:  Concentrate my firepower and the first battle begins
 ## 2024/2/29 - : Concentrate my firepower and the second battle begins
 # ============================
+# [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 # Algorithms as a Technology
 ## "We hope that this textbook provides you with an enjoyable introduction to the field of algorithms. We have attempted to make every algorithm accessible and interesting. Enjoy it !"
 
