@@ -2,6 +2,7 @@
 ## 2024/2/29 - : Concentrate my firepower and the second battle begins
 # ============================
 # [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
+# Time is Money, Efficiency is Life
 # Algorithms as a Technology
 ## "We hope that this textbook provides you with an enjoyable introduction to the field of algorithms. We have attempted to make every algorithm accessible and interesting. Enjoy it !"
 
