@@ -1,6 +1,8 @@
 ## 2023/1/9 18:00 - 1/12:  round 1
 ## 2024/2/29 - : round 2
 # ============================
+## Just ignore all the grammar details of a programming language, let the compiler or interpreter check them for you, you only focus on the algorithm ideas ! Remember this project is NOT where you study programming language grammars ! So python is the perfect language for this purpose.
+
 # [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 # Time is Money, Efficiency is Life
 # Algorithms as a Technology
