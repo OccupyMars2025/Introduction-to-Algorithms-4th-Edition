@@ -5,8 +5,7 @@
 
 ---
 
-
-## Just ignore all the grammar details of a programming language, let the compiler or interpreter check them for you, you only focus on the algorithm ideas ! Remember this project is NOT where you study programming language grammars ! So python is the perfect language for this purpose.
+## In this project, first I will use python to implement all the algorithms and complete the excercises to help me clarify the ideas, then I will use C++ to redo it again.
 
 # [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 # Time is Money, Efficiency is Life
