@@ -22,7 +22,7 @@ void selectionSort(std::vector<int>& a) {
 
 
 int main() {
-    testSortingAlgorithm(selectionSort);
+    testSortingAlgorithm(selectionSort, "selectionSort");
     
     return 0;
 }

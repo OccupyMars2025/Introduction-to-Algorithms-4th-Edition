@@ -18,7 +18,7 @@ void insertionSort(std::vector<int>& vec) {
 
 int main(int argc, char const *argv[])
 {
-    testSortingAlgorithm(insertionSort);
+    testSortingAlgorithm(insertionSort, "insertionSort");
     
     return 0;
 }
