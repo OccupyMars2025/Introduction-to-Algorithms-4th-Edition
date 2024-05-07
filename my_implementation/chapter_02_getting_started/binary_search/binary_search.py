@@ -1,9 +1,10 @@
 import copy
-from typing import List, Tuple, Optional, Union
+from typing import List, Tuple, Optional, Union, Callable
 import random
+from ...utils.test_methods import test_search_method
 
 
-def binary_search(a: List, value: Union[int, float]):
+def binary_search(a: List, value: int):
     """
     iterative version
 
@@ -65,28 +66,8 @@ def is_sorted(a: List):
             return False
     return True
 
-def test_binary_search():
-    for n in range(1, 100):
-        sorted_list = sorted(random.choices(range(-100, 100), k=n))
-        for elem in sorted_list:
-            found, index = binary_search(sorted_list, elem)
-            assert (found and sorted_list[index] == elem) 
-            
-        for x in range(-200, 200):           
-            found, index = binary_search(sorted_list, x)
-            if found:
-                assert sorted_list[index] == x
-            else:
-                sorted_list_copy = copy.deepcopy(sorted_list)
-                sorted_list.insert(index, x)
-                assert is_sorted(sorted_list)
-                sorted_list.pop(index)
-                assert is_sorted(sorted_list)
-                assert sorted_list == sorted_list_copy
-
 
 if __name__ == '__main__':
-    test_binary_search()
-    print('Success!')
-    
+    test_search_method(binary_search)
+
     
