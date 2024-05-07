@@ -41,12 +41,7 @@ void mergeSort(std::vector<int>& vec){
 
 int main(int argc, char const *argv[])
 {
-    for (int n = 1; n < 1000; ++n) {
-        std::vector<int> randomVector = generateRandomVector(n, -100, 100);
-        mergeSort(randomVector);
-        assert(isSorted(randomVector));
-    }
-    std::cout << "All tests passed!" << std::endl;
+    testSortingAlgorithm(mergeSort, "mergeSort");
 
     return 0;
 }

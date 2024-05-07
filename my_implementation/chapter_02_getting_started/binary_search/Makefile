@@ -1,6 +1,6 @@
 cpp: 
-	clang++-18  ./merge_sort.cpp  ../../../utils/vector_utils.cpp   -I  ../../../include/   -o merge_sort
-	./merge_sort
+	clang++-18  ./binary_search.cpp  ../../../utils/vector_utils.cpp   -I  ../../../include/   -o binary_search
+	./binary_search
 
 
 python:

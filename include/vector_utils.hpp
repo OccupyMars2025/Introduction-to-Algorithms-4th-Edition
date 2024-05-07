@@ -4,24 +4,10 @@
 #include <random>
 #include <vector>
 #include <cassert>
+#include <algorithm>
 
 std::vector<int> generateRandomVector(int size, int minValue, int maxValue);
 void printVector(const std::vector<int>& a);
 bool isSorted(const std::vector<int>& a);
-
-
-template<typename SortingMethod>
-void testSortingAlgorithm(SortingMethod& sortingMethod, std::string methodName) {
-    for(int i = 1; i < 50; ++i) {
-        std::vector<int> randomVector = generateRandomVector(i, -100, 100);
-        sortingMethod(randomVector);
-        bool isVecSorted = isSorted(randomVector);
-        if(!isVecSorted) {
-            std::cout << "Error: The test of the sorting algorithm " << methodName << " is failed !" << std::endl;
-            std::cout << "The failed vector: ";
-            printVector(randomVector);
-            assert(false);
-        }
-    }
-    std::cout << "The test of the sorting algorithm " << methodName << " is passed" << std::endl;
-}
+void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec, int x, int* index), std::string methodName);
+void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::string methodName);

@@ -1,4 +1,7 @@
 {
     "baidu.comate.displayLanguage": "en",
-    "baidu.comate.username": "OccupyMars2025"
+    "baidu.comate.username": "OccupyMars2025",
+    "files.associations": {
+        "random": "cpp"
+    }
 }
