@@ -2,9 +2,25 @@
 #include <random>
 #include <vector>
 #include <cassert>
+#include <algorithm>
+#include <numeric>
+
 #include "vector_utils.hpp"
 
 
+std::vector<int> generateRandomVectorWithDistinctValues(int size, int minValue, int maxValue) {
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+    std::vector<int> values(maxValue - minValue + 1);
+    std::iota(values.begin(), values.end(), minValue); // Fill the vector with sequential values
+
+    std::shuffle(values.begin(), values.end(), g); // Shuffle the vector
+
+    std::vector<int> vec(values.begin(), values.begin() + size); // Take the first size elements
+
+    return vec;
+}
 
 std::vector<int> generateRandomVector(int size, int minValue, int maxValue) {
     std::random_device rd;

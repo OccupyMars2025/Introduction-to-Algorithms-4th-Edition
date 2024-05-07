@@ -6,6 +6,7 @@
 #include <cassert>
 #include <algorithm>
 
+std::vector<int> generateRandomVectorWithDistinctValues(int size, int minValue, int maxValue);
 std::vector<int> generateRandomVector(int size, int minValue, int maxValue);
 void printVector(const std::vector<int>& a);
 bool isSorted(const std::vector<int>& a);

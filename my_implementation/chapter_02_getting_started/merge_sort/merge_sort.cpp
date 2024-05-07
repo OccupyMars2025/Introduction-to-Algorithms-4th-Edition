@@ -27,21 +27,21 @@ void merge(std::vector<int>& left, std::vector<int>& right, std::vector<int>& ve
 }
 
 
-void mergeSort(std::vector<int>& vec){
+void countInversions(std::vector<int>& vec){
     if(vec.size() <= 1){
         return;
     }
     std::vector<int> left(vec.begin(), vec.begin() + (vec.size()/2));
     std::vector<int> right(vec.begin() + (vec.size()/2), vec.end());
-    mergeSort(left);
-    mergeSort(right);
+    countInversions(left);
+    countInversions(right);
     merge(left, right, vec);
 }
 
 
 int main(int argc, char const *argv[])
 {
-    testSortingAlgorithm(mergeSort, "mergeSort");
+    testSortingAlgorithm(countInversions, "mergeSort");
 
     return 0;
 }
