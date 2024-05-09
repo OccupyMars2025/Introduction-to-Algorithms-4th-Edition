@@ -6,7 +6,6 @@
 
 ---
 
-## In this project, first I will use python to implement all the algorithms and complete the excercises to help me clarify the ideas, then I will use C++ to redo it again.
 
 # [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 # Time is Money, Efficiency is Life
