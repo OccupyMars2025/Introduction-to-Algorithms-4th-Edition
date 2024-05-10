@@ -4,6 +4,7 @@
 #include <cassert>
 #include <algorithm>
 #include <numeric>
+#include <iomanip>
 
 #include "vector_utils.hpp"
 
@@ -37,10 +38,11 @@ std::vector<int> generateRandomVector(int size, int minValue, int maxValue) {
 
 
 void printVector(const std::vector<int>& a) {
+    std::cout << "[";
     for(const auto& element : a) {
-        std::cout << element << " ";
+        std::cout << std::setw(10) << element << " ";
     }
-    std::cout << std::endl;
+    std::cout << "]" << std::endl;
 }
 
 bool isSorted(const std::vector<int>& a) {
@@ -103,3 +105,37 @@ void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::str
 }
 
 
+Matrix generateRandomMatrix(int rows, int cols, int min, int max) {
+    assert(rows > 0 && cols > 0 && min <= max);
+    Matrix matrix(rows, std::vector<int>(cols));
+
+    for(int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            matrix[i][j] = rand() % (max - min + 1) + min;
+        }
+    }
+
+    return matrix;
+}
+
+
+void printMatrix(Matrix const & matrix) {
+    std::cout << "--------------------------------------------------" << std::endl;
+    std::cout << "Matrix (" << matrix.size() << ", " << matrix[0].size() << ") :" << std::endl;
+    for(int i = 0; i < matrix.size(); ++i) {
+        printVector(matrix[i]);
+    }
+    std::cout << "--------------------------------------------------" << std::endl;
+}
+
+bool isMatrixEqual(Matrix const & matrix1, Matrix const & matrix2) {
+    if(matrix1.size() != matrix2.size()) {
+        return false;
+    }
+    for(int i = 0; i < matrix1.size(); ++i) {
+        if(matrix1[i] != matrix2[i]) {
+            return false;
+        }
+    }
+    return true;
+}

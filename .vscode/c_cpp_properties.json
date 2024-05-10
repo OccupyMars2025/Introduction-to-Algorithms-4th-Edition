@@ -7,9 +7,9 @@
                 "${workspaceFolder}/my_implementation/include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
+            "compilerPath": "/usr/bin/clang++-18",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
             "intelliSenseMode": "linux-clang-x64"
         }
     ],

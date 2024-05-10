@@ -65,7 +65,7 @@ int countInversionsBruteForce(std::vector<int>& vec){
 
 int main(int argc, char const *argv[])
 {
-    for(int n = 1; n <= 100; ++n){
+    for(int n = 1; n <= 300; ++n){
         std::vector<int> vec = generateRandomVectorWithDistinctValues(n, -1000, 1000);
         std::vector<int> vec_copy = vec;
         assert(countInversionsBruteForce(vec) == countInversions(vec_copy));
@@ -73,6 +73,7 @@ int main(int argc, char const *argv[])
         // printVector(vec);
         // printVector(vec_copy);
     }
+    std::cout << "All tests passed!" << std::endl;
 
     return 0;
 }
