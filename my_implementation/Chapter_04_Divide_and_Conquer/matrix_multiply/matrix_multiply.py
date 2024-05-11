@@ -70,8 +70,9 @@ def matrix_multiply_recursive(A: np.ndarray, B: np.ndarray, C: np.ndarray) -> No
     matrix_multiply_recursive(A22, B22, C22)
             
             
-def test_maxtrix_multiply():
-    for n in range(1, 260):
+def test_square_maxtrix_multiply():
+    print('Testing square matrix multiplication...')
+    for n in range(1, 200):
         A = np.random.randint(100, size=(n, n))
         B = np.random.randint(100, size=(n, n))
         C = np.random.randint(100, size=(n, n))
@@ -89,8 +90,100 @@ def test_maxtrix_multiply():
             print(f'Test the recursive method for n = {n} passed.')
             
     print('All tests passed.')
+    
+    
+def generalized_matrix_multiply_straightforward(A: np.ndarray, B: np.ndarray, C: np.ndarray) -> None:
+    """
+    Generalized matrix multiplication for any n x m matrices.
         
+    :param A: np.array
+        2-D array of shape (n, m)
+    :param B: np.array
+        2-D array of shape (m, p)
+    :param C: np.array
+        2-D array of shape (n, p)
+    C = A * B + C
+    """
+    assert A.shape[1] == B.shape[0] and C.shape[0] == A.shape[0] and C.shape[1] == B.shape[1]
+    n, m, p = A.shape[0], A.shape[1], B.shape[1]
+    for i in range(n):
+        for j in range(p):
+            C[i, j] += sum([A[i, k] * B[k, j] for k in range(m)])
+
+
+def generalized_matrix_multiply_recursive(A: np.ndarray, B: np.ndarray, C: np.ndarray) -> None:
+    """
+    Generalized matrix multiplication for any n x m matrices.
+        
+    :param A: np.array
+        2-D array of shape (n, m)
+    :param B: np.array
+        2-D array of shape (m, p)
+    :param C: np.array
+        2-D array of shape (n, p)
+    C = A * B + C
+    """
+    assert A.shape[1] == B.shape[0] and C.shape[0] == A.shape[0] and C.shape[1] == B.shape[1]
+    n, m, p = A.shape[0], A.shape[1], B.shape[1]
+    if n == 1 or m == 1 or p == 1:
+        generalized_matrix_multiply_straightforward(A, B, C)
+        return
+    
+    half_n = n // 2
+    half_m = m // 2
+    half_p = p // 2
+    
+    A11 = A[:half_n, :half_m]
+    A12 = A[:half_n, half_m:]
+    A21 = A[half_n:, :half_m]
+    A22 = A[half_n:, half_m:]
+    
+    B11 = B[:half_m, :half_p]
+    B12 = B[:half_m, half_p:]
+    B21 = B[half_m:, :half_p]
+    B22 = B[half_m:, half_p:]
+    
+    C11 = C[:half_n, :half_p]
+    C12 = C[:half_n, half_p:]
+    C21 = C[half_n:, :half_p]
+    C22 = C[half_n:, half_p:]
+    
+    generalized_matrix_multiply_recursive(A11, B11, C11)
+    generalized_matrix_multiply_recursive(A12, B21, C11)
+    
+    generalized_matrix_multiply_recursive(A11, B12, C12)
+    generalized_matrix_multiply_recursive(A12, B22, C12)
+    
+    generalized_matrix_multiply_recursive(A21, B11, C21)
+    generalized_matrix_multiply_recursive(A22, B21, C21)
+    
+    generalized_matrix_multiply_recursive(A21, B12, C22)
+    generalized_matrix_multiply_recursive(A22, B22, C22)
+
+
+def test_generalized_matrix_multiply(max_n: int, max_m: int, max_p: int) -> None:
+    print('Testing generalized matrix multiply...')
+    for n in range(1, max_n):
+        for m in range(1, max_m):
+            for p in range(1, max_p):
+                # print(f'n = {n}, m = {m}, p = {p}')                
+                
+                A = np.random.randint(low=0, high=100, size=(n, m))
+                B = np.random.randint(low=0, high=100, size=(m, p))
+                C = np.random.randint(low=0, high=100, size=(n, p))
+                C_copy = C.copy()
+                C_copy2 = C.copy()
+                
+                C += np.matmul(A, B)
+                
+                generalized_matrix_multiply_straightforward(A, B, C_copy)
+                assert np.all(C == C_copy)
+                
+                generalized_matrix_multiply_recursive(A, B, C_copy2)
+                assert np.all(C == C_copy2)
+
+    print('All tests passed')
         
 if __name__ == '__main__':
-    test_maxtrix_multiply()
-    
+    test_square_maxtrix_multiply()    
+    test_generalized_matrix_multiply(20, 20, 20)

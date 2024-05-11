@@ -127,15 +127,3 @@ void printMatrix(Matrix const & matrix) {
     }
     std::cout << "--------------------------------------------------" << std::endl;
 }
-
-bool isMatrixEqual(Matrix const & matrix1, Matrix const & matrix2) {
-    if(matrix1.size() != matrix2.size()) {
-        return false;
-    }
-    for(int i = 0; i < matrix1.size(); ++i) {
-        if(matrix1[i] != matrix2[i]) {
-            return false;
-        }
-    }
-    return true;
-}

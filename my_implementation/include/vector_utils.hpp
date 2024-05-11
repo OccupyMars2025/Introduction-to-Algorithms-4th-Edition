@@ -17,4 +17,3 @@ void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec,
 void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::string methodName);
 Matrix generateRandomMatrix(int rows, int cols, int min, int max);
 void printMatrix(Matrix const & matrix);
-bool isMatrixEqual(Matrix const & matrix1, Matrix const & matrix2);
