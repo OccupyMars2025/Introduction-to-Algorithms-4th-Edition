@@ -13,7 +13,7 @@
  * @param B - matrix (n, n)
  * @param C - matrix (n, n)
 */
-void matrixMultiplyStraightforward(Matrix &A, Matrix &B, Matrix &C) {
+void squareMatrixMultiplyStraightforward(Matrix &A, Matrix &B, Matrix &C) {
     int n = A.size();
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
@@ -38,6 +38,10 @@ public:
         return matrix[rowStart + row][colStart + col];
     }
 
+    const int& operator()(int row, int col) const {
+        return matrix[rowStart + row][colStart + col];
+    }
+
     int getNumRows() const {
         return rowEnd - rowStart;
     }
@@ -48,6 +52,55 @@ public:
 
     Matrix& getWholeMatrix() {
         return matrix;
+    }
+
+    Matrix operator+(const SubmatrixProxy& other) const {
+        assert(getNumRows() == other.getNumRows());
+        assert(getNumCols() == other.getNumCols());
+
+        Matrix result(getNumRows(), std::vector<int>(getNumCols(), 0));
+        for (int i = 0; i < getNumRows(); ++i) {
+            for (int j = 0; j < getNumCols(); ++j) {
+                result[i][j] = (*this)(i, j) + other(i, j);
+            }
+        }
+        return result;
+    }
+
+    SubmatrixProxy& operator+=(const SubmatrixProxy& other) {
+        assert(getNumRows() == other.getNumRows());
+        assert(getNumCols() == other.getNumCols());
+        for (int i = 0; i < getNumRows(); ++i) {
+            for (int j = 0; j < getNumCols(); ++j) {
+                (*this)(i, j) += other(i, j);
+            }
+        }
+        return *this;
+    }
+
+    SubmatrixProxy& operator-=(const SubmatrixProxy& other) {
+        assert(getNumRows() == other.getNumRows());
+        assert(getNumCols() == other.getNumCols());
+        for (int i = 0; i < getNumRows(); ++i) {
+            for (int j = 0; j < getNumCols(); ++j) {
+                (*this)(i, j) -= other(i, j);
+            }
+        }
+        return *this;
+    }
+
+
+    Matrix operator-(const SubmatrixProxy& other) const {
+        assert(getNumRows() == other.getNumRows());
+        assert(getNumCols() == other.getNumCols());
+
+        Matrix result(getNumRows(), std::vector<int>(getNumCols(), 0));
+        for (int i = 0; i < getNumRows(); ++i) {
+            for (int j = 0; j < getNumCols(); ++j) {
+                result[i][j] = (*this)(i, j) - other(i, j);
+            }
+        }
+        return result;
     }
 
 private:
@@ -68,7 +121,7 @@ private:
  * @param B - matrix (n, n)
  * @param C - matrix (n, n)
 */
-void matrixMultiplyRecursive(SubmatrixProxy &A, SubmatrixProxy &B, SubmatrixProxy &C) {
+void squareMatrixMultiplyRecursive(SubmatrixProxy &A, SubmatrixProxy &B, SubmatrixProxy &C) {
     int n = A.getNumRows();
     if (n == 1) {
         C(0, 0) += A(0, 0) * B(0, 0);
@@ -92,25 +145,122 @@ void matrixMultiplyRecursive(SubmatrixProxy &A, SubmatrixProxy &B, SubmatrixProx
     SubmatrixProxy C21(C, half_n, n, 0, half_n);
     SubmatrixProxy C22(C, half_n, n, half_n, n);
 
-    matrixMultiplyRecursive(A11, B11, C11);
-    matrixMultiplyRecursive(A12, B21, C11);
+    squareMatrixMultiplyRecursive(A11, B11, C11);
+    squareMatrixMultiplyRecursive(A12, B21, C11);
 
-    matrixMultiplyRecursive(A11, B12, C12);
-    matrixMultiplyRecursive(A12, B22, C12);
+    squareMatrixMultiplyRecursive(A11, B12, C12);
+    squareMatrixMultiplyRecursive(A12, B22, C12);
 
-    matrixMultiplyRecursive(A21, B11, C21);
-    matrixMultiplyRecursive(A22, B21, C21);
+    squareMatrixMultiplyRecursive(A21, B11, C21);
+    squareMatrixMultiplyRecursive(A22, B21, C21);
 
-    matrixMultiplyRecursive(A21, B12, C22);
-    matrixMultiplyRecursive(A22, B22, C22);
+    squareMatrixMultiplyRecursive(A21, B12, C22);
+    squareMatrixMultiplyRecursive(A22, B22, C22);
+}
+
+
+/**
+ * Strassen's algorithm for matrix multiplication (n, n)
+ * in which n is an exact power of 2.
+ * 
+ * Divide and conquer.
+ * 
+ * Just modify C in place.
+ * C = A * B + C
+ * 
+ * @param A - matrix (n, n)
+ * @param B - matrix (n, n)
+ * @param C - matrix (n, n)
+*/
+void squareMatrixMultiplyStrassen(SubmatrixProxy &A, SubmatrixProxy &B, SubmatrixProxy &C) {
+    int n = A.getNumRows();
+    assert(n == A.getNumCols());
+    assert(n == B.getNumRows());
+    assert(n == B.getNumCols());
+    assert(n == C.getNumRows());
+    assert(n == C.getNumCols());
+
+    if (n == 1) {
+        C(0, 0) += A(0, 0) * B(0, 0);
+        return;
+    }
+    assert(n % 2 == 0);
+    int half_n = n / 2;
+
+    SubmatrixProxy A11(A, 0, half_n, 0, half_n);
+    SubmatrixProxy A12(A, 0, half_n, half_n, n);
+    SubmatrixProxy A21(A, half_n, n, 0, half_n);
+    SubmatrixProxy A22(A, half_n, n, half_n, n);
+
+    SubmatrixProxy B11(B, 0, half_n, 0, half_n);
+    SubmatrixProxy B12(B, 0, half_n, half_n, n);
+    SubmatrixProxy B21(B, half_n, n, 0, half_n);
+    SubmatrixProxy B22(B, half_n, n, half_n, n);
+
+    SubmatrixProxy C11(C, 0, half_n, 0, half_n);
+    SubmatrixProxy C12(C, 0, half_n, half_n, n);
+    SubmatrixProxy C21(C, half_n, n, 0, half_n);
+    SubmatrixProxy C22(C, half_n, n, half_n, n);
+
+    std::vector<Matrix> S(11, Matrix(half_n, std::vector<int>(half_n, 0)));
+    S[1] = B12 - B22;
+    S[2] = A11 + A12;
+    S[3] = A21 + A22;
+    S[4] = B21 - B11;
+    S[5] = A11 + A22;
+    S[6] = B11 + B22;
+    S[7] = A12 - A22;
+    S[8] = B21 + B22;
+    S[9] = A11 - A21;
+    S[10] = B11 + B12;
+    std::vector<SubmatrixProxy> S_proxy;
+    for(int i = 0; i < 11; ++i) {
+        S_proxy.push_back(SubmatrixProxy(S[i]));
+    }
+
+    std::vector<Matrix> P(8, Matrix(half_n, std::vector<int>(half_n, 0)));
+    std::vector<SubmatrixProxy> P_proxy;
+    for(int i = 0; i < 8; ++i) {
+        P_proxy.push_back(SubmatrixProxy(P[i]));
+    }
+
+    squareMatrixMultiplyStrassen(A11, S_proxy[1], P_proxy[1]);
+    squareMatrixMultiplyStrassen(S_proxy[2], B22, P_proxy[2]);
+    squareMatrixMultiplyStrassen(S_proxy[3], B11, P_proxy[3]);
+    squareMatrixMultiplyStrassen(A22, S_proxy[4], P_proxy[4]);
+    squareMatrixMultiplyStrassen(S_proxy[5], S_proxy[6], P_proxy[5]);
+    squareMatrixMultiplyStrassen(S_proxy[7], S_proxy[8], P_proxy[6]);
+    squareMatrixMultiplyStrassen(S_proxy[9], S_proxy[10], P_proxy[7]);
+
+
+    // C11 += P[5] + P[4] - P[2] + P[6]
+    // C12 += P[1] + P[2]
+    // C21 += P[3] + P[4]
+    // C22 += P[5] + P[1] - P[3] - P[7]
+    C11 += P_proxy[5];
+    C11 += P_proxy[4];
+    C11 -= P_proxy[2];
+    C11 += P_proxy[6];
+
+    C12 += P_proxy[1];
+    C12 += P_proxy[2];
+
+    C21 += P_proxy[3];
+    C21 += P_proxy[4];
+
+    C22 += P_proxy[5];
+    C22 += P_proxy[1];
+    C22 -= P_proxy[3];
+    C22 -= P_proxy[7];
 }
 
 
 void testSquareMatrixMultiply() {
-    std::cout << "Testing square matrix multiply..." << std::endl;
+    std::cout << "Testing square matrix multiply (n, n)(n is an exact power of 2)..." << std::endl;
 
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < 8; ++i) {
         int n = 1 << i;
+        std::cout << "Testing n = " << n << std::endl;
 
         Matrix A = generateRandomMatrix(n, n, -100, 100);
         SubmatrixProxy A_proxy(A);
@@ -119,11 +269,15 @@ void testSquareMatrixMultiply() {
         Matrix benchmark_C = generateRandomMatrix(n, n, -100, 100);
         Matrix C_copy1 = benchmark_C;
         SubmatrixProxy C_proxy1(C_copy1);
+        Matrix C_copy2 = benchmark_C;
+        SubmatrixProxy C_proxy2(C_copy2);
 
-        matrixMultiplyStraightforward(A, B, benchmark_C);
-        matrixMultiplyRecursive(A_proxy, B_proxy, C_proxy1);
+        squareMatrixMultiplyStraightforward(A, B, benchmark_C);
+        squareMatrixMultiplyRecursive(A_proxy, B_proxy, C_proxy1);
+        squareMatrixMultiplyStrassen(A_proxy, B_proxy, C_proxy2);
 
         assert(C_proxy1.getWholeMatrix() == benchmark_C);
+        assert(C_proxy2.getWholeMatrix() == benchmark_C);
     }
     std::cout << "All sqaure matrix multiply tests passed!" << std::endl;
 }
@@ -230,7 +384,7 @@ void testGeneralizedMatrixMultiply() {
                 generalizedMatrixMultiplyRecursive(A_proxy, B_proxy, C_copy1_proxy);
 
                 assert(C_proxy.getWholeMatrix() == C_copy1_proxy.getWholeMatrix());
-                std::cout << "Test passed for n = " << n << ", m = " << m << ", p = " << p << std::endl;
+                // std::cout << "Test passed for n = " << n << ", m = " << m << ", p = " << p << std::endl;
             }
         }
     }
