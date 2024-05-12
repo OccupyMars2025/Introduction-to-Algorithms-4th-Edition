@@ -2,7 +2,7 @@
 ## 2024/5/6 12:00 - now: round 2
 - [x] 2024/5/6 12:00 - 5/7 22:00 : Chapter 2 Getting Started
 - [x] 5/7 22:00 - 5/8 22:10: Chapter 3: Characterizing Running Times, page 71-98
-- [ ] 5/8 22:10 - : Chapter 4: Divide-and-Conquer, page 98-148 
+- [ ] 5/8 22:10 - 5/12 22:00 : Chapter 4: Divide-and-Conquer, page 98-148 
 
 ---
 
