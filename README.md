@@ -4,7 +4,7 @@
 - [x] 2024/5/6 12:00 - 5/7 22:00 : Chapter 2 Getting Started
 - [x] 5/7 22:00 - 5/8 22:10: Chapter 3: Characterizing Running Times, page 71-98
 - [x] 5/8 22:10 - 5/12 19:30 : Chapter 4: Divide-and-Conquer, page 98-148
-## remain to learn: Section 4.6 and 4.7 in Chapter 4
+## remain to learn: Section 4.6, 4.7 and Chapter 4 Problems
 - [ ] 5/12 19:30 - 5/13 22:00: Chapter 5: Probabilistic Analysis and Randomized Algorithms
 
 ---
