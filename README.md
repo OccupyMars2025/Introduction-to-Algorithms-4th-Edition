@@ -11,7 +11,8 @@
 - [x] 5/12 19:30 - 5/17 8:30: Chapter 5: Probabilistic Analysis and Randomized Algorithms
 ### TODO: page 151, chapter 5 Exercises
 ### TODO: page 166-178
-- [ ] 5/17 8:30 - : Chapter 6: Heapsort,  page 178-204
+- [x] 5/17 8:30 - 5/18 15:40 : Chapter 6: Heapsort,  page 178-204
+- [x] 5/18 15:40 - : Chapter 7: Quicksort, page 204-227
 ---
 
 
