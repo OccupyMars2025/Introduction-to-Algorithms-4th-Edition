@@ -90,7 +90,7 @@ void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec,
 
 
 void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::string methodName) {
-    for(int i = 1; i < 50; ++i) {
+    for(int i = 1; i < 500; ++i) {
         std::vector<int> randomVector = generateRandomVector(i, -100, 100);
         sortingMethod(randomVector);
         bool isVecSorted = isSorted(randomVector);
