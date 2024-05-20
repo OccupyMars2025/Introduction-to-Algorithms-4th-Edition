@@ -13,7 +13,9 @@
 ### TODO: page 166-178
 - [x] 5/17 8:30 - 5/18 15:40 : Chapter 6: Heapsort,  page 178-204
 ### TODO: all exercises and problems in Chapter 6
-- [ ] 5/18 15:40 - : Chapter 7: Quicksort, page 204-227
+- [x] 5/18 15:40 - 5/20 19:00: Chapter 7: Quicksort, page 204-227
+### TODO: page 220-226
+- [ ] 5/20 19:00 - : Chapter 8: Sorting in Linear Time, page 227-249
 ---
 
 
