@@ -92,6 +92,9 @@ void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec,
 void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::string methodName) {
     for(int i = 1; i < 500; ++i) {
         std::vector<int> randomVector = generateRandomVector(i, -100, 100);
+        std::vector<int> sortedVector = randomVector;
+        std::sort(sortedVector.begin(), sortedVector.end());
+
         sortingMethod(randomVector);
         bool isVecSorted = isSorted(randomVector);
         if(!isVecSorted) {
@@ -99,6 +102,10 @@ void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::str
             std::cout << "The failed vector: ";
             printVector(randomVector);
             assert(false);
+        }
+
+        for(int j = 0; j < sortedVector.size(); ++j) {
+            assert(randomVector[j] == sortedVector[j]);
         }
     }
     std::cout << methodName << " passed all tests" << std::endl;
