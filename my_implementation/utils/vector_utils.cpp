@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <numeric>
 #include <iomanip>
+#include <functional>
 
 #include "vector_utils.hpp"
 
@@ -88,14 +89,13 @@ void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec,
 }
 
 
-
-void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::string methodName) {
-    for(int i = 1; i < 500; ++i) {
-        std::vector<int> randomVector = generateRandomVector(i, -100, 100);
+void testSortingAlgorithm(const SortingFunction& sortingFunction, int maxArraySize, int minValue, int maxValue, std::string methodName) {
+    for(int n = 1; n <= maxArraySize; ++n) {
+        std::vector<int> randomVector = generateRandomVector(n, minValue, maxValue);
         std::vector<int> sortedVector = randomVector;
         std::sort(sortedVector.begin(), sortedVector.end());
 
-        sortingMethod(randomVector);
+        sortingFunction(randomVector);
         bool isVecSorted = isSorted(randomVector);
         if(!isVecSorted) {
             std::cout << "Error: The test of the sorting algorithm " << methodName << " is failed !" << std::endl;
@@ -110,6 +110,31 @@ void testSortingAlgorithm(void (*sortingMethod)(std::vector<int>& vec), std::str
     }
     std::cout << methodName << " passed all tests" << std::endl;
 }
+
+void testSortingAlgorithm(const SortingFunctionNotInPlace& sortingFunction, int maxArraySize, int minValue, int maxValue, std::string methodName) {
+    for(int n = 1; n <= maxArraySize; ++n) {
+        std::vector<int> randomVector = generateRandomVector(n, minValue, maxValue);
+        std::vector<int> sortedVector = randomVector;
+        std::sort(sortedVector.begin(), sortedVector.end());
+
+        std::vector<int> sortedVector002 = sortingFunction(randomVector);
+        bool isVecSorted = isSorted(sortedVector002);
+        if(!isVecSorted) {
+            std::cout << "Error: The test of the sorting algorithm " << methodName << " is failed !" << std::endl;
+            std::cout << "The failed vector: ";
+            printVector(sortedVector002);
+            assert(false);
+        }
+
+        assert(sortedVector002.size() == sortedVector.size());
+        for(int j = 0; j < sortedVector.size(); ++j) {
+            assert(sortedVector002[j] == sortedVector[j]);
+        }
+    }
+    std::cout << methodName << " passed all tests" << std::endl;
+}
+
+
 
 
 Matrix generateRandomMatrix(int rows, int cols, int min, int max) {

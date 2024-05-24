@@ -28,6 +28,7 @@ def partition_wrong_version(arr: List, start: int, end: int) -> int:
             right -= 1
         if left <= right:
             arr[left], arr[right] = arr[right], arr[left]
+            # Maybe we don't need to update left and right here ???
             left += 1
             right -= 1
     return left
