@@ -6,6 +6,7 @@
 #include <numeric>
 #include <iomanip>
 #include <functional>
+#include <type_traits>
 
 #include "vector_utils.hpp"
 
@@ -23,38 +24,6 @@ std::vector<int> generateRandomVectorWithDistinctValues(int size, int minValue, 
 
     return vec;
 }
-
-std::vector<int> generateRandomVector(int size, int minValue, int maxValue) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(minValue, maxValue);
-
-    std::vector<int> vec(size);
-    for (int i = 0; i < size; ++i) {
-        vec[i] = dis(gen);
-    }
-
-    return vec;
-}
-
-
-void printVector(const std::vector<int>& a) {
-    std::cout << "[";
-    for(const auto& element : a) {
-        std::cout << std::setw(10) << element << " ";
-    }
-    std::cout << "]" << std::endl;
-}
-
-bool isSorted(const std::vector<int>& a) {
-    for(int i = 0; i < a.size() - 1; ++i) {
-        if (a[i] > a[i + 1]) {
-            return false;
-        }
-    }
-    return true;
-}
-
 
 
 void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec, int x, int* index), std::string methodName) {
@@ -88,28 +57,6 @@ void testSearchingAlgorithm(bool (*searchingMethod)(std::vector<int> const& vec,
     std::cout << methodName << " passed all tests" << std::endl;
 }
 
-
-void testSortingAlgorithm(const SortingFunction& sortingFunction, int maxArraySize, int minValue, int maxValue, std::string methodName) {
-    for(int n = 1; n <= maxArraySize; ++n) {
-        std::vector<int> randomVector = generateRandomVector(n, minValue, maxValue);
-        std::vector<int> sortedVector = randomVector;
-        std::sort(sortedVector.begin(), sortedVector.end());
-
-        sortingFunction(randomVector);
-        bool isVecSorted = isSorted(randomVector);
-        if(!isVecSorted) {
-            std::cout << "Error: The test of the sorting algorithm " << methodName << " is failed !" << std::endl;
-            std::cout << "The failed vector: ";
-            printVector(randomVector);
-            assert(false);
-        }
-
-        for(int j = 0; j < sortedVector.size(); ++j) {
-            assert(randomVector[j] == sortedVector[j]);
-        }
-    }
-    std::cout << methodName << " passed all tests" << std::endl;
-}
 
 void testSortingAlgorithm(const SortingFunctionNotInPlace& sortingFunction, int maxArraySize, int minValue, int maxValue, std::string methodName) {
     for(int n = 1; n <= maxArraySize; ++n) {
