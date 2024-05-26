@@ -15,7 +15,10 @@
 ### TODO: all exercises and problems in Chapter 6
 - [x] 5/18 15:40 - 5/20 19:00: Chapter 7: Quicksort, page 204-227
 ### TODO: page 220-226
-- [ ] 5/20 19:00 - : Chapter 8: Sorting in Linear Time, page 227-249
+- [x] 5/20 19:00 - 5/23 8:30 : Chapter 8: Sorting in Linear Time, page 227-249
+- [x] 5/23 8:30 - 5/25 10:30: Chapter 9: Medians and Order Statistics, page 249-270
+- [x] 5/25 10:30 - 5/26 6:30: Chapter 10: Elementary Data Structures , page 270-294
+- [ ] 5/26 6:30 - : Chapter 11: Hash Tables, page 294-334
 ---
 
 
