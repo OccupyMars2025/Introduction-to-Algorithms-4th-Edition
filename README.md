@@ -19,7 +19,7 @@
 ### TODO: chapter 8: Problems
 - [x] 5/23 8:30 - 5/25 10:30: Chapter 9: Medians and Order Statistics, page 249-270
 - [x] 5/25 10:30 - 5/26 6:30: Chapter 10: Elementary Data Structures , page 270-294
-- [ ] 5/26 6:30 - : Chapter 11: Hash Tables, page 294-334
+- [ ] 5/26 6:30 - 5/27 23:00: Chapter 11: Hash Tables, page 294-334
 ---
 
 
