@@ -2,7 +2,7 @@
 ## 2024/5/6 12:00 - now: round 2
 
 --- 
-
+### TODO: all the exercises and problems in ch1-ch11 in the 4th edition book, I have only completed them in ch1-ch11 in the 3rd edition book
 # Goal: 2024/5/6 12:00 - 5/25 22:00:  complete learning this book
 - [x] 2024/5/6 12:00 - 5/7 22:00 : Chapter 2 Getting Started
 - [x] 5/7 22:00 - 5/8 22:10: Chapter 3: Characterizing Running Times, page 71-98
