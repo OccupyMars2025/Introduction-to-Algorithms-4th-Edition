@@ -97,13 +97,13 @@ vector<int> find_city_to_protect(int n, vector<tuple<int, int, int, int>>& highw
     vector<int> essential_cities;
 
     vector<tuple<int, int, int>> existing_edges;
-    vector<tuple<int, int, int>> repair_edges;
+    // vector<tuple<int, int, int>> repair_edges;
     /*
     Use a priority queue for `repair_edges`:** Instead of sorting `repair_edges` every time, you could use a priority queue. This would keep the edges in sorted order as they're added, which could be more efficient if there are a lot of edges.
     priority_queue has no clear() method, so put it in the for loop
     */
     // Example priority queue using the custom comparator for a min-heap
-    // priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, CompareCost> repair_edges;
+    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, CompareCost> repair_edges;
 
 
 
@@ -112,14 +112,14 @@ vector<int> find_city_to_protect(int n, vector<tuple<int, int, int, int>>& highw
     set<int> components;
     for (int city = 0; city < n; ++city) {
         existing_edges.clear();
-        repair_edges.clear();
+        // repair_edges.clear();
         for (auto& [u, v, cost, status] : highways) {
             if (u != city && v != city) {
                 if (status == 1)
                     existing_edges.push_back({u, v, cost});
                 else 
-                    // repair_edges.push({u, v, cost});
-                    repair_edges.push_back({u, v, cost});
+                    repair_edges.push({u, v, cost});
+                    // repair_edges.push_back({u, v, cost});
             }
         }
         DisjointSetUnion dsu(n);
@@ -138,25 +138,9 @@ vector<int> find_city_to_protect(int n, vector<tuple<int, int, int, int>>& highw
         }
         // --------------start: similar to Kruskal's algorithm ----------------
         min_repair_cost = 0;
-        // while(!repair_edges.empty()) {
-        //     auto& [u, v, cost] = repair_edges.top();
-        //     repair_edges.pop();
-        //     if(dsu.find(u) != dsu.find(v)) {
-        //         dsu.unionSet(u, v);
-        //         min_repair_cost += cost;
-        //         num_components--;
-        //         if(2 == num_components) {
-        //             break;
-        //         }
-        //     }
-        // }
-        // while (!repair_edges.empty()) {
-        //     repair_edges.pop();
-        // }
-        sort(repair_edges.begin(), repair_edges.end(), [](auto& a, auto& b) {
-            return get<2>(a) < get<2>(b);
-        });
-        for (auto& [u, v, cost] : repair_edges) {
+        while(!repair_edges.empty()) {
+            auto [u, v, cost] = repair_edges.top();
+            repair_edges.pop();
             if(dsu.find(u) != dsu.find(v)) {
                 dsu.unionSet(u, v);
                 min_repair_cost += cost;
@@ -166,6 +150,23 @@ vector<int> find_city_to_protect(int n, vector<tuple<int, int, int, int>>& highw
                 }
             }
         }
+        while (!repair_edges.empty()) {
+            repair_edges.pop();
+        }
+
+        // sort(repair_edges.begin(), repair_edges.end(), [](auto& a, auto& b) {
+        //     return get<2>(a) < get<2>(b);
+        // });
+        // for (auto& [u, v, cost] : repair_edges) {
+        //     if(dsu.find(u) != dsu.find(v)) {
+        //         dsu.unionSet(u, v);
+        //         min_repair_cost += cost;
+        //         num_components--;
+        //         if(2 == num_components) {
+        //             break;
+        //         }
+        //     }
+        // }
         
         // --------------end: similar to Kruskal's algorithm ----------------
 
