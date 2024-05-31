@@ -53,9 +53,41 @@ class DisjointSetUnion:
     #         self.parent[u] = self.find(self.parent[u])
     #     return self.parent[u]
     
+    # def find(self, u: int):
+    #     """
+    #     Iterative version
+        
+    #     Args:
+    #         u (int): the id of a city,in the range [0, n-1]
+
+    #     Returns:
+    #         the root of the tree containing u
+    #     """
+    #     root = u
+    #     while root != self.parent[root]:
+    #         root = self.parent[root]
+    #     while self.parent[u] != root:
+    #         u, self.parent[u] = self.parent[u], root
+    #     return root
+    
+    # def find(self, u: int):
+    #     """
+    #     Iterative version, path halving
+        
+    #     Args:
+    #         u (int): the id of a city,in the range [0, n-1]
+
+    #     Returns:
+    #         the root of the tree containing u
+    #     """
+    #     while u != self.parent[u]:
+    #         self.parent[u] = self.parent[self.parent[u]]
+    #         u = self.parent[u]
+    #     return u
+    
     def find(self, u: int):
         """
-        Iterative version
+        Iterative version, path splitting
         
         Args:
             u (int): the id of a city,in the range [0, n-1]
@@ -63,12 +95,9 @@ class DisjointSetUnion:
         Returns:
             the root of the tree containing u
         """
-        root = u
-        while root != self.parent[root]:
-            root = self.parent[root]
-        while self.parent[u] != root:
-            u, self.parent[u] = self.parent[u], root
-        return root
+        while u != self.parent[u]:
+            u, self.parent[u] = self.parent[u], self.parent[self.parent[u]]
+        return u
     
     def union(self, u: int, v: int):
         """
@@ -89,94 +118,97 @@ class DisjointSetUnion:
                 self.parent[root_v] = root_u
                 self.rank[root_u] += 1
 
+## Actually, we don't need this function
+# def kruskal(n: int, edges: List[Tuple[int, int, int]]) -> Tuple[int, int]:
+#     """
+#     Finds the minimum spanning tree (MST) cost using Kruskal's algorithm.
 
-def kruskal(n: int, edges: List[Tuple[int, int, int]]) -> Tuple[int, int]:
-    """
-    Finds the minimum spanning tree (MST) cost using Kruskal's algorithm.
+#     Args:
+#         n (int): The number of vertices in the graph.
+#         edges (List[Tuple[int, int, int]]): The list of edges in the graph, where each edge is represented as a tuple (u, v, cost).
+#         u and v are in the range [0, n-1], and cost is a non-negative integer.
 
-    Args:
-        n (int): The number of vertices in the graph.
-        edges (List[Tuple[int, int, int]]): The list of edges in the graph, where each edge is represented as a tuple (u, v, cost).
-        u and v are in the range [0, n-1], and cost is a non-negative integer.
-
-    Returns:
-        List[Tuple[int, int, int]]: all the edges of the minimum spanning forest (MSF) of the graph.
-    """
-    dsu = DisjointSetUnion(n)
-    edges = sorted(edges, key=lambda x: x[2])
-    edges_of_msf = []
-    msf_edges = 0
+#     Returns:
+#         List[Tuple[int, int, int]]: all the edges of the minimum spanning forest (MSF) of the graph.
+#     """
+#     dsu = DisjointSetUnion(n)
+#     edges = sorted(edges, key=lambda x: x[2])
+#     edges_of_msf = []
+#     msf_edges = 0
     
-    for u, v, cost in edges:
-        if dsu.find(u) != dsu.find(v):
-            dsu.union(u, v)
-            edges_of_msf.append((u, v, cost))
-            msf_edges += 1
-            if msf_edges == n - 1:
-                break
+#     for u, v, cost in edges:
+#         if dsu.find(u) != dsu.find(v):
+#             dsu.union(u, v)
+#             edges_of_msf.append((u, v, cost))
+#             msf_edges += 1
+#             if msf_edges == n - 1:
+#                 break
     
-    return edges_of_msf
+#     return edges_of_msf
 
 
-def find_city_to_protect(n: int, m: int, highways: List[Tuple[int, int, int, int]]) -> List[int]:
+def find_city_to_protect(n: int, highways: List[Tuple[int, int, int, int]]) -> List[int]:
     """
     Finds the critical cities that need to be protected in order to minimize the repair cost of highways.
 
     Args:
         n (int): The number of cities.
-        m (int): The number of highways.
-        highways (list): A list of tuples representing the highways. Each tuple contains four elements:
+        highways (List[Tuple[int, int, int, int]]): A list of tuples representing the highways. Each tuple contains four elements:
                          city1 (int): The first city connected by the highway.
                          city2 (int): The second city connected by the highway.
                          cost (int): The cost of repairing the highway.
                          status (int): The status of the highway (1 for existing, 0 for damaged).
 
     Returns:
-        list: A list of critical cities that need to be protected. If no critical cities are found, returns [0].
+        list: A list of critical cities that need to be protected. If no critical cities are found, returns [-1].
     """
-    original_edges = []
-    for city1, city2, cost, status in highways:
-        if status == 1:
-            original_edges.append((city1 - 1, city2 - 1, cost))
-    
-    
     city_and_minimum_repair_cost : List[Tuple[int, int]] = []
     
     # If one of these cities is removed, the remaining graph will be disconnected even all destroyed highways are repaired
-    essential_cities = []
+    essential_cities : List[int]= []
     
     for city in range(n):
-        filtered_edges = [(u, v, cost) for u, v, cost in original_edges if u != city and v != city]
         dsu = DisjointSetUnion(n)
         
-        for u, v, cost in filtered_edges:
-            dsu.union(u, v)
+        existing_edges : List[Tuple[int, int, int]] = []
+        repair_edges : List[Tuple[int, int, int]] = []
         
-        components = len(set(dsu.find(i) for i in range(n) if i != city))
+        for city1, city2, cost, status in highways:
+            if city1 == city or city2 == city:
+                continue
+            if status == 1:
+                dsu.union(city1, city2)
+                existing_edges.append((city1, city2, cost))
+            else:    
+                repair_edges.append((city1, city2, cost))
         
-        if components == 1:
-            # Even after removing the city, the graph remains connected
+        components = set()
+        for i in range(n):
+            components.add(dsu.find(i))
+        num_components = len(components)
+        if num_components == 2:
             continue
         
-        repair_edges = [(city1 - 1, city2 - 1, cost) for city1, city2, cost, status in highways if status == 0 and city1 - 1 != city and city2 - 1 != city]
-        edges_of_msf = kruskal(n, filtered_edges + repair_edges)
-        if len(edges_of_msf) == n - 2:
-            # After removing this city, the remaining graph can be connected after repairing some damaged highways
-            if len(essential_cities) > 0:
-                continue
-            min_repair_cost = 0
-            for edge in edges_of_msf:
-                if edge in repair_edges:
-                    min_repair_cost += edge[2]
+        min_repair_cost = 0
+        sorted_repair_edges = sorted(repair_edges, key=lambda x: x[2])
+        for u, v, cost in sorted_repair_edges:
+            if dsu.find(u) != dsu.find(v):
+                dsu.union(u, v)
+                min_repair_cost += cost
+                num_components -= 1
+                if num_components == 2:
+                    break
+        
+        if num_components > 2:
+            essential_cities.append(city)
+        elif num_components == 2:
             if min_repair_cost > 0:
                 city_and_minimum_repair_cost.append((city, min_repair_cost))
         else:
-            # After removing this city, the remaining graph will be disconnected even all destroyed highways are repaired
-            essential_cities.append(city)
-    
+            assert False, "This should not happen"
+
     if len(essential_cities) > 0:
-        essential_cities = sorted(essential_cities)
-        return [city + 1 for city in essential_cities]
+        return essential_cities
     elif len(city_and_minimum_repair_cost) > 0:
         city_and_minimum_repair_cost = sorted(city_and_minimum_repair_cost, key=lambda x: x[1], reverse=True)
         critical_cities = []
@@ -186,9 +218,9 @@ def find_city_to_protect(n: int, m: int, highways: List[Tuple[int, int, int, int
             else:
                 break
         critical_cities = sorted(critical_cities)
-        return [city + 1 for city in critical_cities]
+        return critical_cities
     else:
-        return [0]
+        return [-1]
 
 # Reading input
 import sys
@@ -208,14 +240,15 @@ M = int(data[1])
 highways = []
 index = 2
 for _ in range(M):
-    City1 = int(data[index]) # in the range [1, N]
-    City2 = int(data[index + 1]) # in the range [1, N]
-    Cost = int(data[index + 2])
-    Status = int(data[index + 3])
-    highways.append((City1, City2, Cost, Status))
+    city1 = int(data[index]) - 1 # in the range [0, N-1]
+    city2 = int(data[index + 1]) - 1 # in the range [0, N-1]
+    cost = int(data[index + 2])
+    status = int(data[index + 3])
+    highways.append((city1, city2, cost, status))
     index += 4
 
 # print(N, M, highways, sep="\n")
 
-result = find_city_to_protect(N, M, highways)
-print(" ".join(map(str, result)))
+result = find_city_to_protect(N, highways)
+result = [city + 1 for city in result]
+print(" ".join(map(str, result)), end="")
