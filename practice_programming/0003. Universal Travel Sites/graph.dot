@@ -1,0 +1,13 @@
+digraph G {
+    EAR -> AAA [label="300"];
+    EAR -> BBB [label="400"];
+    AAA -> BBB [label="100"];
+    AAA -> CCC [label="400"];
+    AAA -> MAR [label="300"];
+    BBB -> DDD [label="400"];
+    AAA -> DDD [label="400"];
+    DDD -> AAA [label="100"];
+    CCC -> MAR [label="400"];
+    DDD -> CCC [label="200"];
+    DDD -> MAR [label="300"];
+}

@@ -1,6 +1,8 @@
 """
 keywords: dynamic programming, 0/1 Knapsack Problem, profit maximization, project selection
 
+https://en.wikipedia.org/wiki/Knapsack_problem
+
 To solve this problem, we need to determine the maximum profit that can be obtained by selecting projects based on their profits, durations, and deadlines. This problem is essentially a variant of the "0/1 Knapsack Problem" where we need to select projects that fit within the given time constraints to maximize profit.
 
 Here is a Python solution using dynamic programming:
