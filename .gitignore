@@ -13,3 +13,6 @@ __pycache__/
 # Ignore virtual environment directories
 env/
 venv/
+
+# Ignore the generated pictures 
+my_implementation/Chapter_12_Binary_Search_Tree/tree_delete/graphviz/

@@ -156,7 +156,7 @@ class BinarySearchTree:
             add_edges(self.root)
 
         dot.attr(rankdir='TB')
-        dot.render(f'./graphviz/bst_{picture_id:03d}.gv', format='png', view=True)
+        dot.render(f'./graphviz/bst_{picture_id:03d}.dot', format='png', view=True)
 
 
 def test():
