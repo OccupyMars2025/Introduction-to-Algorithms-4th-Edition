@@ -1,2 +1,15 @@
-__pycache__/
+# Ignore all C++ executables
 **/a.out
+
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore all Mypy cache directories
+**/.mypy_cache/
+
+# Ignore virtual environment directories
+env/
+venv/

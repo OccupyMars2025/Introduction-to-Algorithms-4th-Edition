@@ -1,0 +1,8 @@
+digraph {
+	size="10,10"
+	A [label=Root shape=ellipse]
+	B [label="Left Child" shape=ellipse]
+	C [label="Right Child" shape=ellipse]
+	A -> B [label=Left color=blue]
+	A -> C [label=Right color=red]
+}

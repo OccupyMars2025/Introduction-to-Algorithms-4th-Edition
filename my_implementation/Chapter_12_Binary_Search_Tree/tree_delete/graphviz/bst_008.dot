@@ -1,0 +1,11 @@
+digraph BinarySearchTree {
+   labelloc="t";
+   label="After deleting -31938848";
+   node [shape=circle];
+   100 -> 36 [label="L"];
+   36 -> 7 [label="L"];
+   36 -> 79 [label="R"];
+   79 -> 69 [label="L"];
+   69 -> 58 [label="L"];
+   58 -> 51 [label="L"];
+}
