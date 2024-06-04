@@ -138,10 +138,8 @@ class BinarySearchTree:
         """
         dot = Digraph(comment='Binary Search Tree')
         dot.attr('node', shape='circle')
+        dot.attr('graph', label=comment, labelloc='top')
         
-        # Add a comment as a label node
-        dot.node('comment', label=comment, shape='plaintext')
-
         def add_edges(node: Optional[TreeNode]) -> None:
             if node is not None:
                 if node.left is not None:

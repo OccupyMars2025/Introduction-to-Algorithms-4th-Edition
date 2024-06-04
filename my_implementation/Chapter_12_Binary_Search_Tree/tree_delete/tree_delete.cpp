@@ -36,6 +36,10 @@ public:
 
     BinarySearchTree() : root(nullptr) {}
 
+    /*
+    replace the subtree rooted at node u with the subtree rooted at node v.
+    u cannot be nullptr. but v can be nullptr.
+    */
     void transplant(TreeNode* u, TreeNode* v) {
         if (u->parent == nullptr) {
             root = v;
@@ -121,7 +125,7 @@ public:
         }
     }
 
-    void visualize(int picture_id, const std::string& comment) {
+    void visualize(int picture_id, const std::string& label) {
         std::ofstream file;
 
         // Format the picture ID with leading zeros to have a width of 3
@@ -130,11 +134,15 @@ public:
         
         file.open(filename.str());
         file << "digraph BinarySearchTree {\n";
-        file << "   labelloc=\"t\";\n";
-        file << "   label=\"" << comment << "\";\n";
+        file << "   labelloc=\"top\";\n";
+        file << "   label=\"" << label << "\";\n";
         file << "   node [shape=circle];\n";
 
-        visualize_node(file, root);
+        if(root) {
+            // Add the root node, or you cannot see the root node if it is the only one node left
+            file << "   " << root->key << ";\n";
+            visualize_node(file, root);
+        }
 
         file << "}\n";
         file.close();
@@ -168,7 +176,7 @@ void test() {
     std::vector<TreeNode*> inorder_list;
     bst.inorder(bst.root, inorder_list);
     std::cout << "\n";
-    for (auto node : inorder_list) {
+    for (const auto& node : inorder_list) {
         std::cout << node->key << " ";
     }
     std::cout << "\n";
@@ -181,13 +189,14 @@ void test() {
         // Pop the node from the inorder list randomly
         int index = rand() % inorder_list.size();
         TreeNode* node = inorder_list[index];
+        std::string label = "After deleting " + std::to_string(node->key);
         inorder_list.erase(inorder_list.begin() + index);
         std::cout << "Deleting node with key " << node->key << "\n";
         bst.tree_delete(node);
 
-        // Sleep a bit to see the visualization
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        bst.visualize(picture_id, "After deleting " + std::to_string(node->key));
+        // // Sleep a bit to see the visualization
+        // std::this_thread::sleep_for(std::chrono::seconds(1));
+        bst.visualize(picture_id, label);
         picture_id++;
     }
 }
