@@ -79,7 +79,7 @@ public:
         } else {
             TreeNode *u_subtree_max_successor = tree_maximum(u)->succ;
             u_parent->right = v;
-            u->succ = tree_minimum(v);
+            u_parent->succ = tree_minimum(v);
             tree_maximum(v)->succ = u_subtree_max_successor;
         }
     }
