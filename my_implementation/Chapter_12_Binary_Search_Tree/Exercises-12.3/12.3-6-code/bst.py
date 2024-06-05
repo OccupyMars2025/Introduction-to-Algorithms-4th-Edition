@@ -118,6 +118,9 @@ class BinarySearchTree:
         elif z.right is None:
             self.transplant(q, z, z.left)
         else:
+            z_subtree_min = self.tree_minimum(z)
+            z_subtree_min_predecessor = self.predecessor(z_subtree_min)
+            
             y = self.tree_minimum(z.right)
             y_parent = self.get_parent(y)
             if y_parent is not z:
@@ -125,8 +128,12 @@ class BinarySearchTree:
                 y.right = z.right
                 # No need to update y.succ
             self.transplant(q, z, y)
+            # Caution: now, the original predecessor(z_subtree).succ is y
             y.left = z.left
             self.tree_maximum(y.left).succ = y
+            
+            if z_subtree_min_predecessor is not None:
+                z_subtree_min_predecessor.succ = z_subtree_min
 
     def insert(self, key: int) -> None:
         """
@@ -270,7 +277,7 @@ class BinarySearchTree:
         self.inorder(self.root, collected_inorder_list)
         print()
         for node in collected_inorder_list:
-            print(f"{node.key},succ:{node.succ.key if node.succ is not None else None}", end=' ')
+            print(node.key, end=' ')
         print()
         
         collected_inorder_list_v2 :List[TreeNode] = []
@@ -291,6 +298,7 @@ def test():
 
     # Generate a random BST with 15 nodes and keys in the range 1 to 100
     bst.generate_random_bst_with_verbose_info(15, (1, 100))
+    # bst.generate_random_bst(15, (1, 100))
 
     # Test the structure of the BST
     bst.test_the_structure()
@@ -299,7 +307,7 @@ def test():
     bst.inorder(bst.root, collected_inorder_list)
     print()
     
-    picture_id = 0
+    picture_id = 1
     while collected_inorder_list:
         node = random.choice(collected_inorder_list)
         bst.tree_delete(node)
