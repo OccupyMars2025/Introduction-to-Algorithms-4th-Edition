@@ -235,9 +235,47 @@ class BinarySearchTree:
             # import time
             # time.sleep(1)
 
+    # def visualize(self, picture_id: int, label: str, additional_info_to_path: str) -> None:
+    #     """
+    #     Generate a visual representation of the binary search tree.
+    #     """
+    #     dot = Digraph(comment='Binary Search Tree')
+    #     dot.attr('node', shape='circle')
+    #     dot.attr('graph', label=label, labelloc='top')
+        
+    #     def add_edges(node: Optional[TreeNode]) -> None:
+    #         if node is not None:
+    #             if node.left is not None:
+    #                 dot.edge(str(node.key), str(node.left.key), label='L')
+    #                 add_edges(node.left)
+    #             if node.right is not None:
+    #                 dot.edge(str(node.key), str(node.right.key), label='R')
+    #                 add_edges(node.right)
+    #             if node.succ is not None:
+    #                 # dot.edge(str(node.key), str(node.succ.key), style='dotted', color='red', label='S')
+    #                 dot.edge(str(node.key), str(node.succ.key), color='red')
+
+
+    #     if self.root is not None:
+    #         dot.node(str(self.root.key))
+    #         add_edges(self.root)
+
+    #     #         The line of code you're looking at is written in Python and it's using the `attr` method of a `dot` object.
+    #     # `dot.attr(rankdir='TB')`: This line is setting an attribute of the `dot` object. The attribute being set is `rankdir`, and it's being set to `'TB'`.
+    #     # The `dot` object is likely an instance of the `Digraph` or `Graph` class from the `graphviz` library, which is a Python interface for creating and rendering graph descriptions in the DOT language.
+    #     # The `rankdir` attribute controls the direction of the graph layout. The value `'TB'` stands for "Top-Bottom", which means that the graph will be laid out from top to bottom. Other possible values for `rankdir` include `'LR'` for "Left-Right", `'BT'` for "Bottom-Top", and `'RL'` for "Right-Left".
+    #     # So, in summary, this line of code is configuring the `dot` graph to be laid out from top to bottom.
+    #     dot.attr(rankdir='TB')
+    #     dot.render(f'./graphviz/bst_{additional_info_to_path}_{picture_id:03d}.dot', format='png', view=True)
+
+
     def visualize(self, picture_id: int, label: str, additional_info_to_path: str) -> None:
         """
         Generate a visual representation of the binary search tree.
+        
+        TODO: I modify the original visualize method to make sure the left child is always on the left side of the parent node and
+        the right child is always on the right side of the parent node.
+        But it seems that the graphviz library does not support this feature.
         """
         dot = Digraph(comment='Binary Search Tree')
         dot.attr('node', shape='circle')
@@ -252,19 +290,29 @@ class BinarySearchTree:
                     dot.edge(str(node.key), str(node.right.key), label='R')
                     add_edges(node.right)
                 if node.succ is not None:
-                    # dot.edge(str(node.key), str(node.succ.key), style='dotted', color='red', label='S')
                     dot.edge(str(node.key), str(node.succ.key), color='red')
 
-
+        def add_nodes_and_edges(node: Optional[TreeNode]) -> None:
+            if node is not None:
+                dot.node(str(node.key))
+                if node.left is not None:
+                    add_nodes_and_edges(node.left)
+                if node.right is not None:
+                    add_nodes_and_edges(node.right)
+                if node.left is not None or node.right is not None:
+                    with dot.subgraph() as s:
+                        # s.attr(rank='same')
+                        if node.left is not None:
+                            s.node(str(node.left.key))
+                        s.node(str(node.key))
+                        if node.right is not None:
+                            s.node(str(node.right.key))
+        
         if self.root is not None:
-            dot.node(str(self.root.key))
+            add_nodes_and_edges(self.root)
             add_edges(self.root)
 
-        #         The line of code you're looking at is written in Python and it's using the `attr` method of a `dot` object.
-        # `dot.attr(rankdir='TB')`: This line is setting an attribute of the `dot` object. The attribute being set is `rankdir`, and it's being set to `'TB'`.
-        # The `dot` object is likely an instance of the `Digraph` or `Graph` class from the `graphviz` library, which is a Python interface for creating and rendering graph descriptions in the DOT language.
-        # The `rankdir` attribute controls the direction of the graph layout. The value `'TB'` stands for "Top-Bottom", which means that the graph will be laid out from top to bottom. Other possible values for `rankdir` include `'LR'` for "Left-Right", `'BT'` for "Bottom-Top", and `'RL'` for "Right-Left".
-        # So, in summary, this line of code is configuring the `dot` graph to be laid out from top to bottom.
+        # Configure the graph to be laid out from top to bottom
         dot.attr(rankdir='TB')
         dot.render(f'./graphviz/bst_{additional_info_to_path}_{picture_id:03d}.dot', format='png', view=True)
 
