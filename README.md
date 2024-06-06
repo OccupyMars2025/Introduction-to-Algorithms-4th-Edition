@@ -24,7 +24,9 @@
 - [x] 5/25 10:30 - 5/26 6:30: Chapter 10: Elementary Data Structures , page 270-294
 ### TODO: page 289-293
 - [x] 5/26 6:30 - 5/28 12:10: Chapter 11: Hash Tables, page 294-334
-- [ ] 5/28 12:10 - 5/29 22:00: Chapter 12: Binary Search Trees, page 334-353
+- [x] 5/28 12:10 - 6/6 20:00: Chapter 12: Binary Search Trees, page 334-353
+### TODO: Problem 12-3, 12-4
+- [ ] 6/6 20:00 - : Chapter 13: Red-Black Trees
 ---
 
 
