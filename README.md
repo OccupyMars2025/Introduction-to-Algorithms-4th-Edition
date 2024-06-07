@@ -30,7 +30,7 @@
 ### TODO: page 289-293
 - [x] 5/26 6:30 - 5/28 12:10: Chapter 11: Hash Tables, page 294-334
 - [x] 5/28 12:10 - 6/6 20:00: Chapter 12: Binary Search Trees, page 334-353
-- [ ] 6/6 20:00 - : Chapter 13: Red-Black Trees
+- [ ] 6/6 20:00 - 6/8 11:30 : Chapter 13: Red-Black Trees
 ---
 
 
