@@ -1,0 +1,2 @@
+python:
+	python rotation.py
