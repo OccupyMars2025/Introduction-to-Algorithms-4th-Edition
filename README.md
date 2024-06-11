@@ -7,6 +7,7 @@
 
 ---
 
+## [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/)
 ### use networkx, graphviz to draw graphs
 ### https://networkx.org/documentation/stable/auto_examples/index.html
 --- 
