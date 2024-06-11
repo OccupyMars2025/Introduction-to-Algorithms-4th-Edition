@@ -6,8 +6,9 @@
 ## https://github.com/OccupyMars2025/Solutions-to-Introduction-to-Algorithms-Third-Edition
 
 ---
-
+# useful tools:
 ## [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/)
+### https://app.diagrams.net/
 ### use networkx, graphviz to draw graphs
 ### https://networkx.org/documentation/stable/auto_examples/index.html
 --- 
