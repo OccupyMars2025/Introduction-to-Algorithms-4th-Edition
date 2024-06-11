@@ -33,6 +33,10 @@ class RedBlackTree:
         if node != self.nil:
             node_label = f'{node.key}'
             graph.node(node_label, style='filled', fillcolor='red' if node.color == 'RED' else 'black', fontcolor='white' if node.color == 'BLACK' else 'black')
+            if node.p != self.nil:
+                parent_label = f'{node.p.key}'
+                graph.edge(node_label, parent_label, style='dashed', color='red')
+            
             if node.left != self.nil:
                 left_label = f'{node.left.key}'
                 graph.edge(node_label, left_label)
@@ -42,18 +46,19 @@ class RedBlackTree:
                 right_label = f'{node.right.key}'
                 graph.edge(node_label, right_label)
                 self.to_graphviz(node.right, graph)
+                
 
         return graph
     
     def left_rotate(self, x: TreeNode) -> None:
         y = x.right  # Set y
         x.right = y.left  # Turn y's left subtree into x's right subtree
-        if y.left != self.nil:
+        if y.left is not self.nil:
             y.left.p = x  # Set y.left's parent to x
         y.p = x.p  # Set y's parent to x's parent
-        if x.p == self.nil:
+        if x.p is self.nil:
             self.root = y  # If x was the root, set y as the new root
-        elif x == x.p.left:
+        elif x is x.p.left:
             x.p.left = y  # If x was a left child, set y as the left child
         else:
             x.p.right = y  # If x was a right child, set y as the right child
@@ -63,13 +68,15 @@ class RedBlackTree:
     def right_rotate(self, y: TreeNode) -> None:
         x: TreeNode = y.left  # set x
         y.left = x.right  # turn x's right subtree into y's left subtree
-        if x.right is not None:
+        # if x.right is not None:
+        if x.right is not self.nil:
             x.right.p = y
         
         x.p = y.p  # link y's parent to x
-        if y.p is None:  # y is root
+        # if y.p is None:  # y is root
+        if y.p is self.nil:  # y is root
             self.root = x
-        elif y == y.p.left:
+        elif y is y.p.left:
             y.p.left = x
         else:
             y.p.right = x
