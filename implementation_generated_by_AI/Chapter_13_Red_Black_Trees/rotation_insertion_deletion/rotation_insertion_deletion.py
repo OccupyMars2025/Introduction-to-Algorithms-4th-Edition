@@ -153,9 +153,9 @@ if __name__ == "__main__":
     import time
     
     rb_tree = RedBlackTree()
-    num_nodes = 10
-    random_keys = random.sample(range(1, 100), num_nodes)
-
+    # num_nodes = 10
+    # random_keys = random.sample(range(1, 100), num_nodes)
+    random_keys = [41, 38, 31, 12, 19, 8]
     picture_id: int = 0
     for key in random_keys:
         rb_tree.insert(key)
