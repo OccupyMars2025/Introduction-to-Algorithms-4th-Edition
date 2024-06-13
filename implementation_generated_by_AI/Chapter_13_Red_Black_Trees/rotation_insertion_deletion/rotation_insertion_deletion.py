@@ -3,22 +3,21 @@ Generating a random red-black tree requires creating a series of nodes and inser
 """
 
 import random
-from typing import Optional
+from typing import List, Optional
 
 import graphviz
 
 class TreeNode:
-    def __init__(self, key: int):
+    def __init__(self, key: int, color: str):
         self.key = key
         self.left: Optional['TreeNode'] = None # Left child # type: ignore
         self.right: Optional['TreeNode'] = None  # Right child # type: ignore
         self.p: Optional['TreeNode'] = None  # Parent node # type: ignore
-        self.color: str = 'RED'  # New nodes are typically inserted as red
+        self.color: str = color  # New nodes are typically inserted as red
 
 class RedBlackTree:
     def __init__(self):
-        self.nil: TreeNode = TreeNode(0)  # Sentinel node for leaf (NIL) nodes
-        self.nil.color = 'BLACK'
+        self.nil: TreeNode = TreeNode(0, 'BLACK')  # Sentinel node for leaf (NIL) nodes
         self.root: TreeNode = self.nil
 
     def to_graphviz(self, node: Optional[TreeNode] = None, graph: Optional[graphviz.Digraph] = None, label: str = '') -> graphviz.Digraph:
@@ -30,24 +29,23 @@ class RedBlackTree:
         if node is None:
             node = self.root
 
-        if node != self.nil:
+        if node is not self.nil:
             node_label = f'{node.key}'
             graph.node(node_label, style='filled', fillcolor='red' if node.color == 'RED' else 'black', fontcolor='white' if node.color == 'BLACK' else 'black')
-            if node.p != self.nil:
+            if node.p is not self.nil:
                 parent_label = f'{node.p.key}'
                 graph.edge(node_label, parent_label, style='dashed', color='red')
             
-            if node.left != self.nil:
+            if node.left is not self.nil:
                 left_label = f'{node.left.key}'
                 graph.edge(node_label, left_label)
                 self.to_graphviz(node.left, graph)
 
-            if node.right != self.nil:
+            if node.right is not self.nil:
                 right_label = f'{node.right.key}'
                 graph.edge(node_label, right_label)
                 self.to_graphviz(node.right, graph)
                 
-
         return graph
     
     def left_rotate(self, x: TreeNode) -> None:
@@ -85,14 +83,14 @@ class RedBlackTree:
         y.p = x
     
     def insert(self, key: int) -> None:
-        node = TreeNode(key)
+        node = TreeNode(key, 'RED')
         node.left = self.nil
         node.right = self.nil
 
         y = self.nil
         x = self.root
 
-        while x != self.nil:
+        while x is not self.nil:
             y = x
             if node.key < x.key:
                 x = x.left
@@ -100,7 +98,7 @@ class RedBlackTree:
                 x = x.right
 
         node.p = y
-        if y == self.nil:
+        if y is self.nil:
             self.root = node
         elif node.key < y.key:
             y.left = node
@@ -112,7 +110,7 @@ class RedBlackTree:
 
     def insert_fixup(self, z: TreeNode) -> None:
         while z.p.color == 'RED':
-            if z.p == z.p.p.left:
+            if z.p is z.p.p.left:
                 y = z.p.p.right
                 if y.color == 'RED':
                     z.p.color = 'BLACK'
@@ -120,7 +118,7 @@ class RedBlackTree:
                     z.p.p.color = 'RED'
                     z = z.p.p
                 else:
-                    if z == z.p.right:
+                    if z is z.p.right:
                         z = z.p
                         self.left_rotate(z)
                     z.p.color = 'BLACK'
@@ -134,7 +132,7 @@ class RedBlackTree:
                     z.p.p.color = 'RED'
                     z = z.p.p
                 else:
-                    if z == z.p.left:
+                    if z is z.p.left:
                         z = z.p
                         self.right_rotate(z)
                     z.p.color = 'BLACK'
@@ -142,31 +140,148 @@ class RedBlackTree:
                     self.left_rotate(z.p.p)
         self.root.color = 'BLACK'
 
-    def inorder_traversal(self, node: TreeNode) -> None:
-        if node != self.nil:
-            self.inorder_traversal(node.left)
-            print(f"({node.key}, {node.color})")
-            self.inorder_traversal(node.right)
+    def inorder_traversal(self, node: TreeNode, inorder_traversal_list: List) -> None:
+        if node is not self.nil:
+            self.inorder_traversal(node.left, inorder_traversal_list)
+            print(f"{node.key},", end=" ")
+            inorder_traversal_list.append(node)
+            self.inorder_traversal(node.right, inorder_traversal_list)
 
-# Generate a random red-black tree
-if __name__ == "__main__":
+    def transplant(self, u: TreeNode, v: TreeNode) -> None:
+        if u.p is self.nil:
+            self.root = v
+        elif u is u.p.left:
+            u.p.left = v
+        else:
+            u.p.right = v
+        v.p = u.p
+
+    def tree_minimum(self, node: TreeNode):
+        while node.left is not self.nil:
+            node = node.left
+        return node
+
+    def delete(self, z: TreeNode) -> None:
+        y = z
+        y_original_color = y.color
+        if z.left is self.nil:
+            x = z.right
+            self.transplant(z, z.right)
+        elif z.right is self.nil:
+            x = z.left
+            self.transplant(z, z.left)
+        else:
+            y = self.tree_minimum(z.right)
+            y_original_color = y.color
+            x = y.right
+            if y.p is z:
+                x.p = y
+            else:
+                self.transplant(y, y.right)
+                y.right = z.right
+                y.right.p = y
+            self.transplant(z, y)
+            y.left = z.left
+            y.left.p = y
+            y.color = z.color
+        if y_original_color == 'BLACK':
+            self.delete_fixup(x)
+
+    def delete_fixup(self, x: TreeNode) -> None:
+        while x is not self.root and x.color == 'BLACK':
+            if x is x.p.left:
+                w = x.p.right
+                if w.color == 'RED':
+                    w.color = 'BLACK'
+                    x.p.color = 'RED'
+                    self.left_rotate(x.p)
+                    w = x.p.right
+                if w.left.color == 'BLACK' and w.right.color == 'BLACK':
+                    w.color = 'RED'
+                    x = x.p
+                else:
+                    if w.right.color == 'BLACK':
+                        w.left.color = 'BLACK'
+                        w.color = 'RED'
+                        self.right_rotate(w)
+                        w = x.p.right
+                    w.color = x.p.color
+                    x.p.color = 'BLACK'
+                    w.right.color = 'BLACK'
+                    self.left_rotate(x.p)
+                    x = self.root
+            else:
+                w = x.p.left
+                if w.color == 'RED':
+                    w.color = 'BLACK'
+                    x.p.color = 'RED'
+                    self.right_rotate(x.p)
+                    w = x.p.left
+                if w.right.color == 'BLACK' and w.left.color == 'BLACK':
+                    w.color = 'RED'
+                    x = x.p
+                else:
+                    if w.left.color == 'BLACK':
+                        w.right.color = 'BLACK'
+                        w.color = 'RED'
+                        self.left_rotate(w)
+                        w = x.p.left
+                    w.color = x.p.color
+                    x.p.color = 'BLACK'
+                    w.left.color = 'BLACK'
+                    self.right_rotate(x.p)
+                    x = self.root
+        x.color = 'BLACK'
+    
+    
+def test() -> None:
     import time
     
     rb_tree = RedBlackTree()
-    # num_nodes = 10
-    # random_keys = random.sample(range(1, 100), num_nodes)
-    random_keys = [41, 38, 31, 12, 19, 8]
+    num_nodes = 10
+    random_keys = random.sample(range(1, 100), num_nodes)
+    # random_keys = [41, 38, 31, 12, 19, 8]
     picture_id: int = 0
+    inorder_traversal_list: List[TreeNode] = []
     for key in random_keys:
         rb_tree.insert(key)
         graph = rb_tree.to_graphviz(label=f'After Inserting {key}')
         time.sleep(1)
-        # graph.render(f'./graphviz/red_black_tree_{picture_id}.dot', format='png', cleanup=True)
-        graph.render(f'./graphviz/red_black_tree_{picture_id}.dot', format='png', view=True)
+        graph.render(f'./graphviz/red_black_tree_insertion_{picture_id: 03d}.dot', format='png', view=True, cleanup=True)
         picture_id += 1
 
-    print("Inorder Traversal of the Red-Black Tree:")
-    rb_tree.inorder_traversal(rb_tree.root)
+        # print("Inorder Traversal of the Red-Black Tree:")
+        inorder_traversal_list.clear()
+        rb_tree.inorder_traversal(rb_tree.root, inorder_traversal_list)
+        print()
+        # check the list is sorted
+        assert inorder_traversal_list == sorted(inorder_traversal_list, key=lambda x: x.key)    
+    
+    
+    longest_inorder_traversal_list = inorder_traversal_list
+    picture_id = 0
+    # choose a random node to delete from the inorder traversal list
+    while longest_inorder_traversal_list:
+        random_index = random.randint(0, len(longest_inorder_traversal_list) - 1)
+        random_node = longest_inorder_traversal_list[random_index]
+        rb_tree.delete(random_node)
+        longest_inorder_traversal_list.pop(random_index)
+        
+        graph = rb_tree.to_graphviz(label=f'After Deleting {random_node.key}')
+        time.sleep(1)
+        graph.render(f'./graphviz/red_black_tree_deletion_{picture_id: 03d}.dot', format='png', view=True, cleanup=True)
+        picture_id += 1
+
+        # print("Inorder Traversal of the Red-Black Tree:")
+        inorder_traversal_list.clear()
+        rb_tree.inorder_traversal(rb_tree.root, inorder_traversal_list)
+        print()
+        # check the list is sorted
+        assert inorder_traversal_list == sorted(inorder_traversal_list, key=lambda x: x.key)
     
 
 
+        
+# Generate a random red-black tree
+if __name__ == "__main__":
+    test()
