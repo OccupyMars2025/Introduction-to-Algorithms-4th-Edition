@@ -37,7 +37,9 @@
 - [x] 5/26 6:30 - 5/28 12:10: Chapter 11: Hash Tables, page 294-334
 - [x] 5/28 12:10 - 6/6 20:00: Chapter 12: Binary Search Trees, page 334-353
 ### TODO: From Chapter 12 on, do exercises and problems using AI. You need to redo all the exercises and problems in Chapter 1-11 by the help of AI
-- [ ] 6/6 20:00 - 6/8 11:30 : Chapter 13: Red-Black Trees, page 353-382
+- [x] 6/6 20:00 - 6/13 20:00 : Chapter 13: Red-Black Trees, page 353-382
+### TODO: Exercise 13.4-9,  Problems in chapter 13
+- [ ] 6/13 20:00 - : Chapter 14: Dynamic Programming, page 384-439
 ---
 
 
