@@ -8,7 +8,7 @@
 
 ## 2023/1/9 18:00 - 1/12:  round 1
 ## 2024/5/6 12:00 - 6/13: round 2
-## 2024/9/6 21:00 - now: continue round 2
+## 2024/9/6 21:00 - now: continue round 2, start from ch14: dynamic programming
 
 ---
 
