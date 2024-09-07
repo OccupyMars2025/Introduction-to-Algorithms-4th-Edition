@@ -5,7 +5,7 @@
 # Excellent ! Let’s get to work !
 
 ---
-
+# Before reading the solution to a problem in the book, I like to challenge myself to try to solve it myself. So exciting !!!
 # You must implement all the algorithms on your own, complete all the exercises on your own, and prove and derive all the theorems on your own. Turn off Copilot and only turn to ChatGPT for some advice when you are stuck for at least 5 minutes. This method may seem slow, but it is actually the most efficient way to learn. Wow, that's so exciting ! Let's do it ! 
 
 ---
