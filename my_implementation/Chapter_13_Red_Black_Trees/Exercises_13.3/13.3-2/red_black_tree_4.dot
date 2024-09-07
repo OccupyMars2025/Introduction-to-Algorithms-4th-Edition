@@ -1,0 +1,17 @@
+digraph {
+	node [shape=circle]
+	graph [label="After Inserting 19" labelloc=t]
+	38 [fillcolor=black fontcolor=white style=filled]
+	38 -> 19
+	19 [fillcolor=black fontcolor=white style=filled]
+	19 -> 38 [color=red style=dashed]
+	19 -> 12
+	12 [fillcolor=red fontcolor=black style=filled]
+	12 -> 19 [color=red style=dashed]
+	19 -> 31
+	31 [fillcolor=red fontcolor=black style=filled]
+	31 -> 19 [color=red style=dashed]
+	38 -> 41
+	41 [fillcolor=black fontcolor=white style=filled]
+	41 -> 38 [color=red style=dashed]
+}

@@ -1,5 +1,0 @@
-digraph {
-	node [shape=circle]
-	graph [label="After Inserting 41" labelloc=t]
-	41 [fillcolor=black fontcolor=white style=filled]
-}

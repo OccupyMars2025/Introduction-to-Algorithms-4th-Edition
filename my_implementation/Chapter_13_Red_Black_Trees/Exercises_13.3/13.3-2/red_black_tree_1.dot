@@ -1,0 +1,8 @@
+digraph {
+	node [shape=circle]
+	graph [label="After Inserting 38" labelloc=t]
+	41 [fillcolor=black fontcolor=white style=filled]
+	41 -> 38
+	38 [fillcolor=red fontcolor=black style=filled]
+	38 -> 41 [color=red style=dashed]
+}
