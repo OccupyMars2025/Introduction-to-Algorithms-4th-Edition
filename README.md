@@ -6,7 +6,7 @@
 
 ---
 
-# You must implement all the algorithms on your own, complete all the exercises on your own, and prove and derive all the theorems on your own. Wow, that's so exciting ! Let's do it !
+# You must implement all the algorithms on your own, complete all the exercises on your own, and prove and derive all the theorems on your own. Wow, that's so exciting ! Let's do it !  (Turn off the copilot, turn to ChatGPT for some advice only when you have got stuck for at least 5 minutes. This method seems to be slow, but it is actually the most efficient method of learning !)
 
 ---
 
