@@ -1,4 +1,10 @@
 # If you don't understand sth, that's okay. What you need to do is to read a lot of material(I mean a few hundred pages) and complete all the exercises on your own. But remember to start with material that fits your ability level. Yes, that's how we get things done. Very simple ! So easy !
+# So tell me, what are you eager to know ?
+# I am very interested in how to use programming to solve various real-world problems.
+# Great ! Then allow me to introduce you to the best introductory material: Introduction to Algorithms (Fourth Edition)
+# Excellent ! Let’s get to work !
+
+---
 
 ## 2023/1/9 18:00 - 1/12:  round 1
 ## 2024/5/6 12:00 - 6/13: round 2
