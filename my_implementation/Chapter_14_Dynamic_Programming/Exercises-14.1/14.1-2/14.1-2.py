@@ -14,6 +14,7 @@ def greedy_cut_rod(p: List[int], n: int) -> Tuple[int, List[int]]:
     while n > 0:
         max_density = 0
         best_length = 0
+        # Caution: len(p) can be much smaller than n
         for i in range(1, min(n + 1, len(p))):
             density = p[i] / i
             if density > max_density:

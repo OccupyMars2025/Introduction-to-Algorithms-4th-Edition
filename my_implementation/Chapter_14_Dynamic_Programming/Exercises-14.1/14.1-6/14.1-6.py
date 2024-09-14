@@ -9,9 +9,10 @@ def fibonacci(n: int) -> int:
 
 
 def test():
-    for n in range(2, 1000):
+    for n in range(2, 2000):
         assert fibonacci(n) == fibonacci(n - 1) + fibonacci(n - 2)
-        
+    print("Passed all tests!")
+    
+    
 if __name__ == '__main__':
     test()
-    print("Passed all tests!")

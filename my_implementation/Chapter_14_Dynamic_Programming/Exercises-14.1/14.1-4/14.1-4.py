@@ -7,13 +7,15 @@ def bottom_up_cut_rod(p: List[int], n: int) -> Tuple[List[int], List[int]]:
     s = [0] * (n + 1)
     for j in range(1, n + 1):
         q = float('-inf')
-        for i in range(1, j//2 + 1):  # Attention: 1 <= i <= j//2
+        longest_piece = min(j // 2, len(p)-1)
+        for i in range(1, longest_piece + 1):  
             if q < p[i] + r[j - i]:
                 q = p[i] + r[j - i]
                 s[j] = i
-        if q < p[j]:
-            q = p[j]
-            s[j] = j
+        if j < len(p):
+            if q < p[j]:
+                q = p[j]
+                s[j] = j
         r[j] = q
     return r, s
 
@@ -36,13 +38,15 @@ def memoized_cut_rod_aux(p: List[int], n: int, r: List[int], s: List[int]) -> in
     else:
         q = float('-inf')
         best_first_cut = 0
-        for i in range(1, n//2 + 1): # Attention: 1 <= i <= n//2
+        longest_piece = min(n // 2, len(p)-1)
+        for i in range(1, longest_piece + 1):
             if q < p[i] + memoized_cut_rod_aux(p, n - i, r, s):
                 q = p[i] + memoized_cut_rod_aux(p, n - i, r, s)
                 best_first_cut = i
-        if q < p[n]:
-            q = p[n]
-            best_first_cut = n
+        if n < len(p):
+            if q < p[n]:
+                q = p[n]
+                best_first_cut = n
         s[n] = best_first_cut
         r[n] = q
         return q
@@ -51,10 +55,10 @@ def memoized_cut_rod_aux(p: List[int], n: int, r: List[int], s: List[int]) -> in
 def test():
     # p = [0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
     for n in range(1, 100):
-        p = random.choices(range(1, 1000), k=n)
+        p = random.choices(range(1, 1000), k=random.randint(1, 2*n))
         p.sort()
         p.insert(0, 0)
-        # print(f"p: {p}")
+        print(f"p: {p}")
         r1, s1 = bottom_up_cut_rod(p, n)
         r2, s2 = memoized_cut_rod(p, n)
         assert r1 == r2, f"r1: {r1} \nr2: {r2}"
@@ -79,7 +83,7 @@ def test():
         
         assert r1[n] == r2[n]
         
-        print("Passed all tests!")
+        print("Passed all tests!\n\n")
         
     
 if __name__ == "__main__":

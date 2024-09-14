@@ -32,9 +32,7 @@ def memoized_cut_rod_aux(p: List[int], n: int, r: List[int]) -> int:
         q = 0
     else:
         q = float('-inf')
-        for i in range(1, len(p)):
-            if i > n:
-                break
+        for i in range(1, n + 1):
             q = max(q, p[i] + memoized_cut_rod_aux(p, n - i, r))
     r[n] = q
     return q
@@ -44,7 +42,7 @@ def bottom_up_cut_rod(p: List[int], n: int) -> int:
     r: List[int] = [0] * (n + 1)
     for j in range(1, n + 1):
         q = float('-inf')
-        for i in range(1, min(j + 1, len(p))):
+        for i in range(1, j + 1):
             q = max(q, p[i] + r[j - i])
         r[j] = q
     return r[n]
@@ -56,7 +54,7 @@ def extended_bottom_up_cut_rod(p: List[int], n: int) -> Tuple[List[int], List[in
     s: List[int] = [0] * (n + 1)
     for j in range(1, n + 1):
         q = float('-inf')
-        for i in range(1, min(j + 1, len(p))):
+        for i in range(1, j + 1):
             if q < p[i] + r[j - i]:
                 q = p[i] + r[j - i]
                 s[j] = i
@@ -74,25 +72,26 @@ def print_cut_rod_solution(p: List[int], n: int) -> None:
         n = n - s[n]
     print()
     assert total_value == r[-1]
+    assert n == 0
     
     
-
 
 def test():
     # Example usage:
     # p is the price array where p[i] is the price of a rod of length i
     # For example, for a rod of length 4, the price array could be [1, 5, 8, 9]
     prices: List[int] = [0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-    for length in range(1, 40):
-        # max_value = cut_rod_v1(prices, length)
+    for length in range(1, len(prices)):
+        max_value = cut_rod_v1(prices, length)
         max_value_v2 = memoized_cut_rod(prices, length)
         max_value_v3 = bottom_up_cut_rod(prices, length)
         r, s = extended_bottom_up_cut_rod(prices, length)
-        # assert max_value == max_value_v2 
+        
+        assert max_value == max_value_v2 
         assert max_value_v2 == max_value_v3
-        assert max_value_v2 == r[length]
+        assert max_value_v3 == r[length]
         print_cut_rod_solution(prices, length)
-        print(f"Maximum obtainable value for rod of length {length: 3d} is {max_value_v2: 4d}")
+        print(f"Maximum obtainable value for rod of length {length: 3d} is {max_value_v2: 4d}\n\n")
         
 
 if __name__ == "__main__":
