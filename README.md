@@ -61,8 +61,9 @@
 ### TODO: From Chapter 12 on, do exercises and problems using AI. You need to redo all the exercises and problems in Chapter 1-11 by the help of AI
 - [x] 6/6 20:00 - 6/13 20:00 : Chapter 13: Red-Black Trees, page 353-382
 ### TODO: Exercise 13.4-9,  Problems in chapter 13
-- [ ] 6/13 20:00 - 6/16, 8/7 20:45- : Chapter 14: Dynamic Programming, page 362-417
 - [ ] 9/6 21:20 - : Chapter 14: Dynamic Programming, page 362-417
+  - [x] 9/6 21:20 - 10/29 11:30: Section 14.1, 14.2, 14.3
+  - [ ] 10/29 11:30 - : Section 14.4 Longest common subsequence
 ---
 
 
