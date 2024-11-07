@@ -63,7 +63,9 @@
 ### TODO: Exercise 13.4-9,  Problems in chapter 13
 - [ ] 9/6 21:20 - : Chapter 14: Dynamic Programming, page 362-417
   - [x] 9/6 21:20 - 10/29 11:30: Section 14.1, 14.2, 14.3
-  - [ ] 10/29 11:30 - : Section 14.4 Longest common subsequence
+  - [x] 10/29 11:30 - 11/7 20:04: Section 14.4 Longest common subsequence
+### TODO: Exercise 14.4-6
+  - [ ] 11/7 20:04 - : Section 14.5 Optimal binary search trees
 ---
 
 
