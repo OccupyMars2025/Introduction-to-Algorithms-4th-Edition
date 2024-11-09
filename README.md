@@ -67,6 +67,37 @@
 ### TODO: Exercise 14.4-6
   - [ ] 11/7 20:04 - : Section 14.5 Optimal binary search trees
 ---
+## How to study "algorithms" ? Recommend some textbooks and learning resources
+Studying algorithms is essential for understanding problem-solving techniques, data processing, and optimizing code. Here’s a study approach with recommended resources to build your skills in algorithms:
+
+### Approach
+1. **Start with Basics**: Understand basic concepts, including data structures (arrays, linked lists, stacks, queues, trees, graphs) and algorithmic fundamentals (sorting, searching, recursion).
+2. **Master Algorithm Analysis**: Learn about time and space complexity using Big O notation, which helps in evaluating algorithm efficiency.
+3. **Practice Core Algorithms**: Focus on common algorithms such as sorting, searching, dynamic programming, and graph algorithms.
+4. **Practice Problem-Solving**: Regularly practice coding problems to internalize techniques and improve your speed and accuracy.
+5. **Explore Advanced Topics**: Study advanced topics like NP-completeness, advanced graph algorithms, and optimization techniques.
+
+### Recommended Textbooks
+1. **"Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein (CLRS)** – Often called the "CLRS book," this comprehensive textbook covers a wide range of algorithms with in-depth explanations and mathematical rigor.
+2. **"Algorithms" by Robert Sedgewick and Kevin Wayne** – A practical book that includes examples in Java, with a focus on problem-solving techniques and efficient coding.
+3. **"The Algorithm Design Manual" by Steven S. Skiena** – Known for its practical approach, this book is highly readable and includes real-world examples along with a "war story" section for each topic.
+4. **"Grokking Algorithms" by Aditya Bhargava** – A visually-oriented, beginner-friendly book that introduces algorithm concepts with engaging diagrams and examples.
+5. **"Algorithms Illuminated" by Tim Roughgarden** – This series provides clear, step-by-step explanations of algorithms and is available in multiple volumes, each covering different topics.
+
+### Additional Learning Resources
+- **Online Courses**:
+  - **Coursera: "Algorithms Specialization" by Stanford (Tim Roughgarden)** – An accessible course that covers algorithms in depth.
+  - **MIT OpenCourseWare: "Introduction to Algorithms"** – Based on MIT’s introductory algorithms class, this free course includes lecture videos, assignments, and exams.
+  - **Udacity’s "Data Structures and Algorithms" Nanodegree** – Offers hands-on practice with a focus on preparing for technical interviews.
+
+- **Practice Platforms**:
+  - **LeetCode, HackerRank, and CodeSignal** – Great platforms for practicing algorithm problems, especially if you’re preparing for coding interviews.
+  - **Project Euler** – Offers math-based problems that require algorithmic thinking, perfect for building problem-solving skills.
+
+Using these resources to develop both your theoretical understanding and practical coding skills will create a strong foundation in algorithms. Regular practice and challenging yourself with increasingly complex problems will solidify your knowledge over time.
+
+
+---
 
 
 # [Introduction to Algorithms, Fourth Edition](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
