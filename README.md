@@ -61,11 +61,17 @@
 ### TODO: From Chapter 12 on, do exercises and problems using AI. You need to redo all the exercises and problems in Chapter 1-11 by the help of AI
 - [x] 6/6 20:00 - 6/13 20:00 : Chapter 13: Red-Black Trees, page 353-382
 ### TODO: Exercise 13.4-9,  Problems in chapter 13
-- [ ] 9/6 21:20 - : Chapter 14: Dynamic Programming, page 362-417
+- [x] 9/6 21:20 - 11/20 15:22: Chapter 14: Dynamic Programming, page 362-417
   - [x] 9/6 21:20 - 10/29 11:30: Section 14.1, 14.2, 14.3
   - [x] 10/29 11:30 - 11/7 20:04: Section 14.4 Longest common subsequence
 ### TODO: Exercise 14.4-6
-  - [ ] 11/7 20:04 - : Section 14.5 Optimal binary search trees
+  - [x] 11/7 20:04 - 11/20 15:22: Section 14.5 Optimal binary search trees
+### TODO: Exercise 14.5-4
+### TODO: chapter 14 Problems
+- [ ] 11/20 15:22 - : Chapter 15: Greedy Algorithms
+  - [ ] 11/20 15:22 - : Section 15.1 An activity-selection problem
+
+
 ---
 ## How to study "algorithms" ? Recommend some textbooks and learning resources
 Studying algorithms is essential for understanding problem-solving techniques, data processing, and optimizing code. Here’s a study approach with recommended resources to build your skills in algorithms:
