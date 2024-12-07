@@ -1,0 +1,1 @@
+## with the first pass, construct d count arrays in advance
