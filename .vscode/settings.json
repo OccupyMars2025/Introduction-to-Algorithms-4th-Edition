@@ -52,5 +52,11 @@
         "sstream": "cpp",
         "queue": "cpp",
         "optional": "cpp"
+    },
+    "python.analysis.extraPaths": [
+        "./clrsPython/Utility functions"
+    ],
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/clrsPython/Utility functions"
     }
 }

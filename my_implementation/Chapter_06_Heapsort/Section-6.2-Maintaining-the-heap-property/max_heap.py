@@ -14,6 +14,18 @@ class MaxHeap:
     def parent(self, i: int) -> int:
         return (i - 1) // 2
     
+    def heapsort(self) -> None:
+        self.build_max_heap()
+        for i in range(self.heap_size-1, 0, -1):
+            self.array[0], self.array[i] = self.array[i], self.array[0]
+            self.heap_size -= 1
+            self.max_heapify(0)
+    
+    def build_max_heap(self) -> None:
+        assert self.heap_size == len(self.array)
+        for i in range(self.parent(self.heap_size-1), -1, -1):
+            self.max_heapify(i)
+    
     def max_heapify(self, i: int) -> None:
         """
         We assume that the subtrees rooted at nodes left(i) 
