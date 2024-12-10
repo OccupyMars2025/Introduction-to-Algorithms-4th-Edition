@@ -1,0 +1,12 @@
+{
+  "title":"Lecture 12: Bellman-Ford",
+  "description": "",
+  "file": null,
+  "learning_resource_types": ["Lecture Videos"],
+  "resource_type": "Video",
+  "file_type": null,
+  "youtube_key":  "f9cVS_URPc0",
+  "captions_file": "/courses/6-006-introduction-to-algorithms-spring-2020/ca5fbd6ac50d5b5e82c00753fdf60990_f9cVS_URPc0.vtt",
+  "transcript_file": "/courses/6-006-introduction-to-algorithms-spring-2020/08c2314e3e4c4590bffc3409549f25eb_f9cVS_URPc0.pdf",
+  "thumbnail_file": "https://img.youtube.com/vi/f9cVS_URPc0/default.jpg",
+  "archive_url": "https://archive.org/download/MIT6.006S20/MIT6_006S20_03_19_Lecture_12_300k.mp4"}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recitation Videos on MIT OpenCourseWare</title>
+    <link>/resources/recitation-videos/</link>
+    <description>Recent content in Recitation Videos on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/recitation-videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Problem Session 7</title>
+      <link>/resources/mit6_006s20_04_07_problem_session_7_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_04_07_problem_session_7_mp4/data.json</guid>
+      <description>Five example programs are worked. Topics include Dijkstra algorithm, weighted graph radius, weighted ratios, and Johnson&amp;rsquo;s algorithm.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 8</title>
+      <link>/resources/mit6_006s20_04_17_problem_session_8_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_04_17_problem_session_8_mp4/data.json</guid>
+      <description>Four example problems are worked. Topics include solving recursively, O(n)-time dynamic programming, topological order, and subproblems.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 9</title>
+      <link>/resources/mit6_006s20_05_01_problem_session_9_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_05_01_problem_session_9_mp4/data.json</guid>
+      <description>Five example problems are worked. Topics include acyclic algorithms, hash tables, and topological ordering.
+Instructor: Justin Solomon</description>
+    </item>
+    
+  </channel>
+</rss>

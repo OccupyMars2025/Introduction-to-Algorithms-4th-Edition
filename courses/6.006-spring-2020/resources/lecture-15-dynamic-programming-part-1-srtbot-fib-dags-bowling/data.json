@@ -1,0 +1,12 @@
+{
+  "title":"Lecture 15: Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling",
+  "description": "",
+  "file": null,
+  "learning_resource_types": ["Lecture Videos"],
+  "resource_type": "Video",
+  "file_type": null,
+  "youtube_key":  "r4-cftqTcdI",
+  "captions_file": "/courses/6-006-introduction-to-algorithms-spring-2020/c38a1d6cdc8a5003b7579e0a17188bc4_r4-cftqTcdI.vtt",
+  "transcript_file": "/courses/6-006-introduction-to-algorithms-spring-2020/ff9f628b7de37ac04e403e1d0b6d647d_r4-cftqTcdI.pdf",
+  "thumbnail_file": "https://img.youtube.com/vi/r4-cftqTcdI/default.jpg",
+  "archive_url": "https://archive.org/download/MIT6.006S20/MIT6_006S20_04_14_Lecture_15_300k.mp4"}

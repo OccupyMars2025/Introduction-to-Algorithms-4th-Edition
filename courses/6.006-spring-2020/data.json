@@ -1,0 +1,33 @@
+{
+  "course_title":"Introduction to Algorithms",
+  "course_description":"This course is an introduction to mathematical modeling of computational problems, as well as common algorithms, algorithmic paradigms, and data structures used to solve these problems. It emphasizes the relationship between algorithms and programming and introduces basic performance measures and analysis techniques for these problems.\n",
+  "course_description_html":"This course is an introduction to mathematical modeling of computational problems, as well as common algorithms, algorithmic paradigms, and data structures used to solve these problems. It emphasizes the relationship between algorithms and programming and introduces basic performance measures and analysis techniques for these problems.",
+  "site_uid":"569bea40-0b9e-4cde-8c34-497bab16606d",
+  "legacy_uid":"08bc3f3a-9a39-a3e3-f6cd-7fcfb9d8eda8","instructors": [{
+    "first_name":"Erik",
+    "last_name":"Demaine",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Erik Demaine"},{
+    "first_name":"Jason",
+    "last_name":"Ku",
+    "middle_initial":"",
+    "salutation":"Dr.",
+    "title":"Dr. Jason Ku"},{
+    "first_name":"Justin",
+    "last_name":"Solomon",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Justin Solomon"}],"department_numbers":["6"],
+  "learning_resource_types":["Lecture Videos","Problem Sets with Solutions","Exams with Solutions","Lecture Notes"],
+  "topics":[["Engineering","Computer Science","Algorithms and Data Structures"],["Engineering","Computer Science","Theory of Computation"],["Mathematics","Computation"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"6.006",
+  "extra_course_numbers":"",
+  "term":"Spring",
+  "year":"2020",
+  "level":["Undergraduate"],
+  "hide_download":null,
+  "image_src":"./static_resources/5a62336c0a97b276d6141b0b7f070b5b_6-006s20.png",
+  "course_image_metadata":{"content_type":"resource","description":"","draft":false,"file":"/courses/6-006-introduction-to-algorithms-spring-2020/5a62336c0a97b276d6141b0b7f070b5b_6-006s20.png","file_size":198160,"file_type":"image/png","image_metadata":{"caption":"In the last lecture, Prof. Demaine demonstrates how he uses algorithms to create intricate origami figures. (Image courtesy of the instructors.)","credit":"","image-alt":"Prof. Demaine holds up a swirling origami figure."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"6-006s20.png","uid":"5a62336c-0a97-b276-d614-1b0b7f070b5b"}}
+

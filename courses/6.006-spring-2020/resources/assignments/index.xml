@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on MIT OpenCourseWare</title>
+    <link>/resources/assignments/</link>
+    <description>Recent content in Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 0</title>
+      <link>/resources/mit6_006s20_ps0-questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps0-questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 0 Solutions</title>
+      <link>/resources/mit6_006s20_ps0-solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps0-solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 1</title>
+      <link>/resources/mit6_006s20_ps1-questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps1-questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 1 Solutions</title>
+      <link>/resources/mit6_006s20_ps1-solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps1-solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 2</title>
+      <link>/resources/mit6_006s20_ps2-questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps2-questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 2 Solutions</title>
+      <link>/resources/mit6_006s20_ps2-solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps2-solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 3</title>
+      <link>/resources/mit6_006s20_ps3-questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps3-questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 3 Solutions</title>
+      <link>/resources/mit6_006s20_ps3-solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps3-solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 4</title>
+      <link>/resources/mit6_006s20_ps4-questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps4-questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 4 Solutions</title>
+      <link>/resources/mit6_006s20_ps4-solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps4-solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 5</title>
+      <link>/resources/mit6_006s20_ps5_questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps5_questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 5 Solutions</title>
+      <link>/resources/mit6_006s20_ps5_solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps5_solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 6</title>
+      <link>/resources/mit6_006s20_ps6_questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps6_questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 6 Solutions</title>
+      <link>/resources/mit6_006s20_ps6_solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps6_solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 7</title>
+      <link>/resources/mit6_006s20_ps7_questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps7_questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 7 Solutions</title>
+      <link>/resources/mit6_006s20_ps7_solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps7_solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 8</title>
+      <link>/resources/mit6_006s20_ps8_questions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps8_questions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>6.006 Introduction to Algorithms, Problem Set 8 Solutions</title>
+      <link>/resources/mit6_006s20_ps8_solutions/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps8_solutions/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assignments</title>
+      <link>/pages/assignments/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/assignments/data.json</guid>
+      <description>Problem Sets Solutions Problem Set 0 Questions (PDF)
+Problem Set 0 Template (ZIP)
+This file contains: 2 .py files and 2 .tex files.
+Problem Set 0 Solutions (PDF)
+Problem Set 1 Questions (PDF)
+Problem Set 1 Template (ZIP)
+This file contains: 2 .py files and 2 .tex files.
+Problem Set 1 Solutions (PDF)
+Problem Set 2 Questions (PDF)
+Problem Set 2 Template (ZIP)
+This file contains: 2 .py files and 2 .</description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps0-template.zip</title>
+      <link>/resources/mit6_006s20_ps0-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps0-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps1-template.zip</title>
+      <link>/resources/mit6_006s20_ps1-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps1-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps2-template.zip</title>
+      <link>/resources/mit6_006s20_ps2-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps2-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps3-template.zip</title>
+      <link>/resources/mit6_006s20_ps3-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps3-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps4-template.zip</title>
+      <link>/resources/mit6_006s20_ps4-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps4-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps5-template.zip</title>
+      <link>/resources/mit6_006s20_ps5-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps5-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps6-template.zip</title>
+      <link>/resources/mit6_006s20_ps6-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps6-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps7-template.zip</title>
+      <link>/resources/mit6_006s20_ps7-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps7-template/data.json</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIT6_006S20_ps8-template.zip</title>
+      <link>/resources/mit6_006s20_ps8-template/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_006s20_ps8-template/data.json</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

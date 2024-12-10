@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Videos on MIT OpenCourseWare</title>
+    <link>/resources/lecture-videos/</link>
+    <description>Recent content in Lecture Videos on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/lecture-videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 1: Algorithms and Computation</title>
+      <link>/resources/lecture-1-algorithms-and-computation/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-1-algorithms-and-computation/data.json</guid>
+      <description>The goal of this introductions to algorithms class is to teach you to solve computation problems and communicate that your solutions are correct and efficient. Models of computation, data structures, and algorithms are introduced.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 10: Depth-First Search</title>
+      <link>/resources/lecture-10-depth-first-search/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-10-depth-first-search/data.json</guid>
+      <description>This class builds on the previous lecture of breadth-first search (BFS) by introducing depth-first search (DFS) and full-BFS and full-DFS. The lecture continues with topological sorts and cycle detection.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Lecture 11: Weighted Shortest Paths</title>
+      <link>/resources/lecture-11-weighted-shortest-paths/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-11-weighted-shortest-paths/data.json</guid>
+      <description>This lecture discusses weighted graphs and weighted paths. This prepares for the next four lectures, which are on algorithms to find shortest-path weights in weighted graphs.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 12: Bellman-Ford</title>
+      <link>/resources/lecture-12-bellman-ford/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-12-bellman-ford/data.json</guid>
+      <description>This lecture introduces a single source shortest path algorithm that works for general graphs. The process, correctness, and running time of the Bellman-Ford algorithm is discussed.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 13: Dijkstra</title>
+      <link>/resources/lecture-13-dijkstra/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-13-dijkstra/data.json</guid>
+      <description>This class discusses a fourth weighted single-source shortest path algorithm: Dijkstra&amp;rsquo;s algorithms. Non-negative edge weights are introduced. There is a worked example of applying Dijkstra&amp;rsquo;s algorithm.
+Instructor: Dr. Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 14: APSP and Johnson</title>
+      <link>/resources/lecture-14-apsp-and-johnson/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-14-apsp-and-johnson/data.json</guid>
+      <description>This lecture focuses on solving any all-pairs shortest paths (APSP) in weighted graphs. Johnson&amp;rsquo;s algorithm is introduced.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 15: Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling</title>
+      <link>/resources/lecture-15-dynamic-programming-part-1-srtbot-fib-dags-bowling/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-15-dynamic-programming-part-1-srtbot-fib-dags-bowling/data.json</guid>
+      <description>This is the first of four lectures on dynamic programing. This begins with how to solve a problem recursively and continues with three examples: Fibonacci, DAG shortest paths, and bowling.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 16: Dynamic Programming, Part 2: LCS, LIS, Coins</title>
+      <link>/resources/lecture-16-dynamic-programming-part-2-lcs-lis-coins/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-16-dynamic-programming-part-2-lcs-lis-coins/data.json</guid>
+      <description>This is the second of four lectures on dynamic programming. This introduces multiple sequence, substring subproblems, and parent pointers. Three examples of subproblem constraints and expansion are given.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 17: Dynamic Programming, Part 3: APSP, Parens, Piano</title>
+      <link>/resources/lecture-17-dynamic-programming-part-3-apsp-parens-piano/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-17-dynamic-programming-part-3-apsp-parens-piano/data.json</guid>
+      <description>This is the third of four lectures on dynamic programming. This focusses on applying subproblem constraints and expansions to example problems including, Bellman-Ford SSSP, Floyd-Warshall APSP, arithmetic parenthesization, and piano/guitar fingering.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 18: Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial</title>
+      <link>/resources/lecture-18-dynamic-programming-part-4-rods-subset-sum-pseudopolynomial/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-18-dynamic-programming-part-4-rods-subset-sum-pseudopolynomial/data.json</guid>
+      <description>This is the fourth and final lecture on dynamic programming. This class focusses on integer subproblems and pseudopolynomial time. Two worked examples are given: rod cutting and subset sum.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 19: Complexity</title>
+      <link>/resources/lecture-19-complexity/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-19-complexity/data.json</guid>
+      <description>This lecture discusses computational complexity and introduces terminology: P, NP, EXP, R. These terms are applied to the concepts of hardness and completeness. The lecture ends with discussion on reductions.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 2: Data Structures and Dynamic Arrays</title>
+      <link>/resources/lecture-2-data-structures-and-dynamic-arrays/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-2-data-structures-and-dynamic-arrays/data.json</guid>
+      <description>Data structures are ways to store data with algorithms that support operations on the data. These collection of sorted operations are interfaces. This class goes over two main interfaces: sequence and set.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 20: Course Review</title>
+      <link>/resources/lecture-20-course-review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-20-course-review/data.json</guid>
+      <description>This lecture reviews the main concepts and learning goals for the course. Students should be able to solve hard computational problems, argue an algorithm is correct, argue an algorithm is &amp;ldquo;good,&amp;rdquo; and effectively communicate the above.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 21: Algorithms—Next Steps</title>
+      <link>/resources/lecture-21-algorithms2014next-steps/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-21-algorithms2014next-steps/data.json</guid>
+      <description>In this lecture, Erik Demaine, Jason Ku, and Justin Solomon talk about their own research in algorithms. This includes origami, folding designs, and applied geometry.
+Instructors: Erik Demaine, Jason Ku, and Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3: Sets and Sorting</title>
+      <link>/resources/lecture-3-sets-and-sorting/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-3-sets-and-sorting/data.json</guid>
+      <description>Stored sets sorted by key allows for faster searching. This lecture covers how to construct a sorted array efficiently and the types of sorts.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Lecture 4: Hashing</title>
+      <link>/resources/lecture-4-hashing/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-4-hashing/data.json</guid>
+      <description>Hashing allows for faster search and dynamic operations on data structures, arrays, and sorted arrays. This lecture discusses comparison models, decision trees, and hash functions.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 5: Linear Sorting</title>
+      <link>/resources/lecture-5-linear-sorting/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-5-linear-sorting/data.json</guid>
+      <description>This builds on the lecture on improving find times and discusses how to achieve a faster sort. Direct access array sorts, tuple sorts, counting sorts, and radix sorts are discussed.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Lecture 6: Binary Trees, Part 1</title>
+      <link>/resources/lecture-6-binary-trees-part-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-6-binary-trees-part-1/data.json</guid>
+      <description>This is the first of two lectures on binary trees. This lecture discusses binary tree terminology, tree navigation, and dynamic operations. These are explored in two applications: sets and sequences.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 7: Binary Trees, Part 2: AVL</title>
+      <link>/resources/lecture-7-binary-trees-part-2-avl/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-7-binary-trees-part-2-avl/data.json</guid>
+      <description>This is the second lecture on binary trees. This covers subtree augmentation and sequence binary trees with subtree sizes. Rotations, rebalancing, and height augmentation are used to achieve height balance (AVL).
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 8: Binary Heaps</title>
+      <link>/resources/lecture-8-binary-heaps/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-8-binary-heaps/data.json</guid>
+      <description>Prof. Demaine discusses priority queue interfaces and sorting algorithms. Algorithms include AVL sort for set AVL trees, selection sort for arrays, insertion sort for sorted arrays, and heap sort for binary heaps.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Lecture 9: Breadth-First Search</title>
+      <link>/resources/lecture-9-breadth-first-search/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture-9-breadth-first-search/data.json</guid>
+      <description>This class covers graph definitions, neighbor sets and adjacencies, graph representations in data structures, and paths. It also discusses shortest paths trees and breadth-first search.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Lecture Videos</title>
+      <link>/video_galleries/lecture-videos/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/video_galleries/lecture-videos/data.json</guid>
+      <description>Due to COVID-19, in-person classes were suspended mid-way through the semester. Lectures continued to be recorded in a traditional style. Problem Session 6 is unavailable.
+Lecture 1: Algorithms and Computation Lecture 2: Data Structures and Dynamic Arrays Problem Session 1 Lecture 3: Sets and Sorting Lecture 4: Hashing Problem Session 2 Lecture 5: Linear Sorting Problem Session 3 Lecture 6: Binary Trees, Part 1 Lecture 7: Binary Trees, Part 2: AVL Problem Session 4 Lecture 8: Binary Heaps Lecture 9: Breadth-First Search Quiz 1 Review Lecture 10: Depth-First Search Lecture 11: Weighted Shortest Paths Problem Session 5 Lecture 12: Bellman-Ford Lecture 13: Dijkstra Problem Session 7 Lecture 14: APSP and Johnson Quiz 2 Review Lecture 15: Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling Lecture 16: Dynamic Programming, Part 2: LCS, LIS, Coins Problem Session 8 Lecture 17: Dynamic Programming, Part 3: APSP, Parens, Piano Lecture 18: Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial Lecture 19: Complexity Problem Session 9 Quiz 3 Review Lecture 20: Course Review Lecture 21: Algorithms—Next Steps </description>
+    </item>
+    
+    <item>
+      <title>Problem Session 1</title>
+      <link>/resources/problem-session-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/problem-session-1/data.json</guid>
+      <description>Four examples of worked problems on the asymptotic behavior of functions and double-ended sequence operations. Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 2</title>
+      <link>/resources/problem-session-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/problem-session-2/data.json</guid>
+      <description>Four examples of worked problems are given. These focus on solving recurrences and the Master Theorem.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 3</title>
+      <link>/resources/problem-session-3/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/problem-session-3/data.json</guid>
+      <description>Five examples of worked problems are given. Topics include drawing pictures of hash tables and reductions from set (hashing bounds) to sequence.
+Instructor: Erik Demaine</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 4</title>
+      <link>/resources/problem-session-4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/problem-session-4/data.json</guid>
+      <description>Five example problems are worked. Topics include sequence rotations, drawing sequence trees, binary search, and programming in Python.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Problem Session 5</title>
+      <link>/resources/problem-session-5/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/problem-session-5/data.json</guid>
+      <description>Five example problems are worked. Topics include graph radius, graph schematics, full breadth-first search, and full depth-first search.
+Instructor: Justin Solomon</description>
+    </item>
+    
+    <item>
+      <title>Quiz 1 Review</title>
+      <link>/resources/quiz-1-review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/quiz-1-review/data.json</guid>
+      <description>This session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include the Master Theorem, data structures, and sorting.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Quiz 2 Review</title>
+      <link>/resources/quiz-2-review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/quiz-2-review/data.json</guid>
+      <description>This session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include graph problems, topological sort, Bellman-Ford, and weighted graphs.
+Instructor: Jason Ku</description>
+    </item>
+    
+    <item>
+      <title>Quiz 3 Review</title>
+      <link>/resources/quiz-3-review/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/quiz-3-review/data.json</guid>
+      <description>This session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include the recursive framework, dynamic programming, and DAG.
+Instructor: Jason Ku</description>
+    </item>
+    
+  </channel>
+</rss>
