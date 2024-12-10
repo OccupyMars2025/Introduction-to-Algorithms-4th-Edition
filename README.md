@@ -1,4 +1,8 @@
-# [2024/12/10 13:00:  Amazing !!! This is the first time I find a bug by "maintaining the loop invariant" !!! "maintaining the loop invariant" is a very powerful technique !!! "maintaining the loop invariant" is not just the only correct way to prove your algorithm is correct !!! But it is also the most powerful technique to help you debug your code !!! It is not just some boring math, but is also a very useful tool !!! VERY USEFUL TOOL !!! I LOVE MATH !!! ](./courses/Problem-Sets/ps0-template/count_long_subarray.py)
+# [2024/12/10 13:00: This python file shows how I use the technique "maintaining the loop invariant" to help me debug](./courses/Problem-Sets/ps0-template/count_long_subarray.py)
+
+
+# 2024/12/10 13:00:  Amazing !!! This is the first time I find a bug by "maintaining the loop invariant" !!! "maintaining the loop invariant" is a very powerful technique !!! "maintaining the loop invariant" is not just the only correct way to prove your algorithm is correct !!! But it is also the most powerful technique to help you debug your code !!! It is not just some boring math, but is also a very useful tool !!! VERY USEFUL TOOL !!! I LOVE MATH !!! 
+
 
 # 2024/12/10 13:00: This is the greatest achievement I've made since I began learning algorithms: Get used to using the technique "mataining the loop invariant" to prove the correctness of my algorithm and help me debug !!!
 
