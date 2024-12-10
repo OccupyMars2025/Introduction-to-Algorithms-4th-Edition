@@ -1,3 +1,7 @@
+# <p align="center"> *Before the start of each iteration, you must make sure the loop invariant holds !!!* </p>
+
+### Caution: "After the end of each iteration, you must make sure the loop invariant holds " is wrong !!! Because you may not even enter the loop at first !!!
+
 # [2024/12/10 13:00: This python file shows how I use the technique "maintaining the loop invariant" to help me debug](./courses/Problem-Sets/ps0-template/count_long_subarray.py)
 
 
